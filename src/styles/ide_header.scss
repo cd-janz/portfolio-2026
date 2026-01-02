@@ -2,8 +2,8 @@ div.left{
   display: flex;
   align-items: center;
   >img{
-    width: 22px;
-    height: 32px;
+    width: 16px;
+    height: 26px;
   }
   >ul{
     display: flex;
@@ -13,7 +13,7 @@ div.left{
     list-style: none;
     padding-left: 20px;
     >li{
-      font-size: 1.025rem;
+      font-size: 0.925rem;
       font-weight: 400;
       text-transform: capitalize;
       color: rgb(var(--text-hover));

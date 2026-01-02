@@ -1,0 +1,13 @@
+---
+interface Props{
+    label: string
+    path: string
+}
+const props = Astro.props;
+---
+<a href={props.path} target="_blank" rel="noopener noreferrer">
+    <figure>
+        <slot/>
+    </figure>
+    <p>{props.label}</p>
+</a>

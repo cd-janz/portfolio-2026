@@ -1,75 +1,111 @@
-div.about_container{
+div.about_container {
   display: grid;
+  grid-template-columns: 2fr 5fr;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   align-items: center;
-  font-family: "Jost", sans-serif;
-  gap: 10px;
-  >.about_card{
-    width: 100%;
+  font-family: "Jost", sans-serif, serif;
+  position: relative;
+  gap: 5px;
+  border: 1px solid rgb(var(--border));
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(var(--border));
+  background: rgb(var(--bg));
+  >figure{
+    width: 1px;
     height: 100%;
-    padding: 10px;
-    >.about_title{
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-      font-family: "Teko", sans-serif;
-      >figure{
-        >svg{
-          width: 24px;
-          height: 24px;
-        }
-        padding: 5px;
-        border-radius: 50%;
-      }
-      >h4{
-        font-size: 2.125rem;
-        font-weight: 400;
-        line-height: 1;
-        text-transform: capitalize;
-      }
-    }
-    >p{
-      padding-left: 5px;
-      text-align: left;
-      white-space: pre-wrap;
-      font-family: "Jost", sans-serif;
-      font-size: 1.0975rem;
-    }
+    position: absolute;
+    left: calc(100% * 2/7);
+    background-color: rgb(var(--border));
   }
-  >.about_profile{
+  >div{
+    padding: 20px;
+  }
+  >div.about_profile{
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    color: rgb(var(--text));
-    width: 100%;
-    height: 100%;
-    border: 1px solid rgb(var(--border));
-    border-radius: 15px;
-    overflow: hidden;
-    >.about_content{
-      padding: 0 10px 10px;
-      >p.name{
-        font-family: "Teko", sans-serif;
-        font-size: 1.625rem;
-        font-weight: 400;
-        line-height: 0.7;
+    align-items: center;
+    gap: 10px;
+    >div.about_location{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      >figure{
+        >svg{
+          width: 18px;
+          height: 18px;
+        }
       }
-      >p.position{
-        padding-left: 5px;
+    }
+    >div.about_languages{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      >p{
+        padding: 2px 10px;
+        background: rgb(var(--border-disabled));
+        border-radius: 8px;
+      }
+    }
+    >div.about_title{
+      >h3{
+        font-size: 1.5rem;
+      }
+      >h4{
+        font-size: 1.175rem;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+    >img{
+      width: 60%;
+      border-radius: 50%;
+    }
+  }
+  >div.about_content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    >div.about_me{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      >h3{
+        font-weight: 600;
+        font-size: 2.275rem;
+      }
+      >p{
+        text-align: start;
         font-size: 1.125rem;
+        white-space: pre-wrap;
+      }
+    }
+    >div.about_links{
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      >a{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &:hover{
+          text-decoration: underline;
+        }
+        >figure{
+          >svg{
+            width: 20px;
+            height: 20px;
+          }
+        }
+        >p{
+          font-weight: 300;
+          font-size: 1.115rem;
+        }
       }
     }
   }
-  >.about_card{
-    border: 1px solid rgb(var(--border));
-    border-radius: 15px;
-    overflow: hidden;
-  }
-}
-div.about_container.about_left{
-  grid-template-columns: 300px 300px 1fr;
-}
-div.about_container.about_right{
-  grid-template-columns: 1fr 300px 300px;
 }

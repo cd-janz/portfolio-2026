@@ -1,11 +1,14 @@
 ---
 import "@/styles/about.scss";
 import SectionLayout from "@/layouts/SectionLayout.astro"
-import AboutProfileCard from "@/components/about/AboutProfileCard.astro";
 import profile from "@/assets/pictures/IMG-20251116-WA0038.jpg"
 import {getEntry} from "astro:content";
-import AboutCard from "@/components/about/AboutCard.astro";
-import SmileUserIcon from "@/assets/icons/system/SmileUserIcon.astro";
+import LocationIcon from "@/assets/icons/system/LocationIcon.astro";
+import EmailIcon from "@/assets/icons/system/EmailIcon.astro";
+import AboutLink from "@/components/about/AboutLink.astro";
+import GithubIcon from "@/assets/icons/system/GithubIcon.astro";
+import PhoneIcon from "@/assets/icons/system/PhoneIcon.astro";
+import LinkedinIcon from "@/assets/icons/system/LinkedinIcon.astro";
 interface Props{
     name: string,
     title: string
@@ -15,33 +18,42 @@ const personEntry = await getEntry("person", locale);
 if(!personEntry) return;
 const person = personEntry.data;
 const {name, title} = Astro.props;
+const github = "https://github.com/cd-janz/portfolio-2026";
+const email = "wk.juanzuniga@gmail.com"
+const linkedin = "https://www.linkedin.com/in/juanzuniga79/";
+const phone = "+57 3027473264";
 ---
 <SectionLayout id="about" section={name} title={title} left={-10} width={250}>
-    <div class="about_container about_left">
-        <AboutProfileCard src={profile.src} first_name={person.first_name} last_name={person.last_name}
-                          email={person.email} position={person.position} />
-        <AboutCard title={person.second_title}
-                   description={[
-                       `First Name: ${person.first_name}`,
-                       `Last Name: ${person.last_name}`,
-                       `Email: ${person.email}`,
-                       `Phone: ${person.phone}`,
-                       `Birthday: ${person.birthday}`,
-                       `Linkedin: ${person.linkedin}`,
-                       `Github: ${person.github}`,
-                       `Spanish: ${person.spanish}`,
-                       `English: ${person.english}`,
-                       `Work Mode: ${person.work_mode}`,
-                       `${person.relocation}`
-                   ].join("\n")} >
-            <figure>
-                <SmileUserIcon/>
-            </figure>
-        </AboutCard>
-        <AboutCard title={person.title} description={person.description} >
-            <figure>
-                <img src="/logo.svg" alt="logo" />
-            </figure>
-        </AboutCard>
+    <div class="about_container">
+        <div class="about_profile">
+            <img src={profile.src} alt="profile picture"/>
+            <div class="about_title">
+                <h3>{person.first_name} {person.last_name}</h3>
+                <h4>{person.position}</h4>
+            </div>
+            <div class="about_languages">
+                <p>Spanish {person.spanish}</p>
+                <p>English {person.english}</p>
+            </div>
+            <div class="about_location">
+                <figure><LocationIcon /></figure>
+                <p>{person.work_mode}</p>
+                -
+                <p>{person.relocation}</p>
+            </div>
+        </div>
+        <figure />
+        <div class="about_content">
+            <div class="about_me">
+                <h3>{person.title}</h3>
+                <p>{person.description}</p>
+            </div>
+            <div class="about_links">
+                <AboutLink label={email} path={`mailto:${email}`}><EmailIcon/></AboutLink>
+                <AboutLink label={phone} path=""><PhoneIcon/></AboutLink>
+                <AboutLink label="Github" path={github}><GithubIcon/></AboutLink>
+                <AboutLink label="linkedin" path={linkedin}><LinkedinIcon/></AboutLink>
+            </div>
+        </div>
     </div>
 </SectionLayout>
