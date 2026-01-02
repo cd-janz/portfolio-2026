@@ -4,6 +4,7 @@ section{
   align-items: center;
   gap: 20px;
   font-family: "Teko", sans-serif;
+  padding-top: 100px;
 }
 .title-container{
   display: flex;
@@ -17,8 +18,8 @@ section{
     height: 20px;
     background: rgba(var(--border-hover));
     position: absolute;
-    top: 30%;
-    right: 60px;
+    top: 43%;
+    left: 190px;
     z-index: 0;
     border-radius: 20px;
   }
@@ -28,12 +29,13 @@ section{
     text-align: center;
     line-height: 0.9;
     z-index: 1;
+    white-space: pre-wrap;
   }
   >h4.description{
     font-family: "Jost", sans-serif;
     font-size: 1.125rem;
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
     max-width: 80%;
   }
 }
@@ -51,8 +53,11 @@ section{
     box-shadow: 0 0 0 1px rgba(var(--primary), 0.1);
   }
   >div.figure{
-    width: 24px;
-    height: 24px;
+    >svg{
+      width: 24px;
+      height: 24px;
+    }
+    width: fit-content;
     padding: 0 15px;
     display: flex;
     align-items: center;
@@ -82,7 +87,7 @@ section{
     >div.btn{
       position: absolute;
       right: 0;
-      font-weight: 600;
+      font-weight: 300;
       font-family: "Jost", sans-serif;
       padding: 5px 20px;
       height: 100%;
