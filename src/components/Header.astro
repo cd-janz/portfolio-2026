@@ -1,0 +1,16 @@
+---
+import "../styles/header.scss"
+import Nav from "./Nav.astro"
+import {getEntry} from "astro:content";
+const locale = Astro.currentLocale!;
+const entry = await getEntry("header", locale);
+if(!entry) return;
+const data = entry.data;
+---
+<header>
+    <img src="/name.svg" alt="janz icon" />
+    <Nav />
+    <div class="header_right">
+        <a href={`/${locale}/resume`} class="btn primary">{data.resume}</a>
+    </div>
+</header>

@@ -1,0 +1,26 @@
+---
+import {getEntry} from "astro:content";
+import "@/styles/hero.scss"
+import EmailIcon from "@/assets/icons/system/EmailIcon.astro";
+const locale = Astro.currentLocale!;
+const entry = await getEntry("hero", locale);
+if(!entry) return;
+const data = entry.data;
+const name = "Juan C. Zuñiga"
+---
+<section>
+    <div class="title-container">
+        <figure class="vector"/>
+        <h1 class="title">{data.headline}</h1>
+        <h4 class="description">{data.description}</h4>
+    </div>
+    <div class="form-container">
+        <div class="figure">
+            <EmailIcon/>
+        </div>
+        <div>
+            <input placeholder={data.enter} type="email" />
+            <div class="btn">contact</div>
+        </div>
+    </div>
+</section>

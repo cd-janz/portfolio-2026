@@ -1,0 +1,39 @@
+---
+import HeroDecoration from "@/assets/decorations/HeroDecoration.astro";
+import "@/styles/theme.css";
+import "@/styles/fonts.css";
+import "@/styles/reset.css";
+import "@/styles/global.scss";
+import Header from "../components/Header.astro";
+interface Props{
+    title: string
+}
+const locale = Astro.currentLocale!
+const {title} = Astro.props;
+---
+<html lang={locale}>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body style="position: relative" id="home">
+        <HeroDecoration/>
+        <Header/>
+        <main id="main"><slot/></main>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+            const loaded = localStorage.getItem("scrollTop");
+            if(!loaded) return;
+            setTimeout(()=>{
+                window.scroll({top: Number(loaded), behavior: "smooth"});
+            }, 100);
+        })
+        document.addEventListener("scrollend", () => {
+            localStorage.setItem("scrollTop", window.pageYOffset.toString());
+        })
+    </script>
+</html>

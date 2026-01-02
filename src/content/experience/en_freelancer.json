@@ -1,0 +1,23 @@
+{
+  "title": "freelancer",
+  "institution": "freelancer",
+  "position_program": "fullstack",
+  "attendance_mode": "remote",
+  "location": "Santa Marta, Colombia",
+  "summary": "Managed end-to-end development cycles for cross-platform applications, ensuring seamless integration between complex backend logic and user-facing environments.",
+  "responsibilities": [],
+  "start": "04/2025",
+  "relevantProjects": [
+    "Mobile Athletic Training & Blog Application",
+    "Industrial Recycling Scheduling & Management Platform",
+    "Enterprise Web Performance Optimization & Redesign",
+    "Hotel Reservation & Booking Management MVP",
+    "Inventory Distribution & Logistics Management MVP"
+  ],
+  "technologies": [
+    "React Native", "Expo", "React", "Next",
+    "Angular", "Redux", "Nest", "Astro", "Spring Boot",
+    "ASP.NET Core"
+  ],
+  "status": "able"
+}

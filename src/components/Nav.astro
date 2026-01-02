@@ -1,0 +1,12 @@
+---
+const locale = Astro.currentLocale!;
+import {getEntry} from "astro:content";
+const entry = await getEntry("nav", locale)
+if(!entry) return;
+const data = entry.data;
+---
+<nav class="bordered">
+    {data.map(item => (
+        <a transition:persist target="_self" href={`${item.path}`}>{item.label}</a>
+    ))}
+</nav>

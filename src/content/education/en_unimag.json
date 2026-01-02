@@ -1,0 +1,14 @@
+{
+  "title": "unimag",
+  "institution": "Universidad del Magdalena",
+  "position_program": "Systems Engineering",
+  "attendance_mode": "In-Person",
+  "location": "Santa Marta, Colombia",
+  "summary": "Foundational engineering training focused on the intersection of system logic and enterprise architecture. This period served as the catalyst for mastering clean code principles and full-stack integration, bridging academic rigor with modern high-performance technologies to build scalable, production-ready solutions.",
+  "start": "08/2019",
+  "technologies": [
+    "React.js", "Spring Boot", "Next.js",
+    "SCSS", "Docker"
+  ],
+  "status": "temporarily paused"
+}

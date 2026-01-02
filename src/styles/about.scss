@@ -1,0 +1,75 @@
+div.about_container{
+  display: grid;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+  gap: 10px;
+  >.about_card{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    >.about_title{
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      font-family: "Teko", sans-serif;
+      >figure{
+        >svg{
+          width: 24px;
+          height: 24px;
+        }
+        padding: 5px;
+        border-radius: 50%;
+      }
+      >h4{
+        font-size: 2.125rem;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: capitalize;
+      }
+    }
+    >p{
+      padding-left: 5px;
+      text-align: left;
+      white-space: pre-wrap;
+      font-family: "Jost", sans-serif;
+      font-size: 1.0975rem;
+    }
+  }
+  >.about_profile{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: rgb(var(--text));
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(var(--border));
+    border-radius: 15px;
+    overflow: hidden;
+    >.about_content{
+      padding: 0 10px 10px;
+      >p.name{
+        font-family: "Teko", sans-serif;
+        font-size: 1.625rem;
+        font-weight: 400;
+        line-height: 0.7;
+      }
+      >p.position{
+        padding-left: 5px;
+        font-size: 1.125rem;
+      }
+    }
+  }
+  >.about_card{
+    border: 1px solid rgb(var(--border));
+    border-radius: 15px;
+    overflow: hidden;
+  }
+}
+div.about_container.about_left{
+  grid-template-columns: 300px 300px 1fr;
+}
+div.about_container.about_right{
+  grid-template-columns: 1fr 300px 300px;
+}

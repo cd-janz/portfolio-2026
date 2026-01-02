@@ -1,0 +1,92 @@
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: "Teko", sans-serif;
+}
+.title-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 55%;
+  position: relative;
+  >figure.vector{
+    width: 400px;
+    height: 20px;
+    background: rgba(var(--border-hover));
+    position: absolute;
+    top: 30%;
+    right: 60px;
+    z-index: 0;
+    border-radius: 20px;
+  }
+  >h1.title{
+    font-weight: 400;
+    font-size: 5.75rem;
+    text-align: center;
+    line-height: 0.9;
+    z-index: 1;
+  }
+  >h4.description{
+    font-family: "Jost", sans-serif;
+    font-size: 1.125rem;
+    text-align: center;
+    font-weight: 400;
+    max-width: 80%;
+  }
+}
+.form-container{
+  display: flex;
+  border: 1px solid rgb(var(--border));
+  width: 35%;
+  height: 45px;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 25px;
+  padding: 5px;
+  &:focus-within{
+    border-color: rgb(var(--border-hover));
+    box-shadow: 0 0 0 1px rgba(var(--primary), 0.1);
+  }
+  >div.figure{
+    width: 24px;
+    height: 24px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    color: rgb(var(--text-hover));
+  }
+  >div{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    >input{
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      &::placeholder{
+        text-transform: capitalize;
+        font-size: 0.875rem;
+      }
+      &:invalid{
+        color: indianred;
+      }
+    }
+    >div.btn{
+      position: absolute;
+      right: 0;
+      font-weight: 600;
+      font-family: "Jost", sans-serif;
+      padding: 5px 20px;
+      height: 100%;
+      border-radius: 25px;
+    }
+  }
+}

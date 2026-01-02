@@ -1,0 +1,34 @@
+---
+import SectionLayout from "@/layouts/SectionLayout.astro";
+import "@/styles/services.scss";
+import {getEntry} from "astro:content";
+import DeskIcon from "@/assets/icons/system/DeskIcon.astro";
+import ServerIcon from "@/assets/icons/system/ServerIcon.astro";
+import MobileIcon from "@/assets/icons/system/MobileIcon.astro";
+interface Props{
+    name: string,
+    title: string
+}
+const props = Astro.props;
+const locale = Astro.currentLocale!;
+const serviceEntries = await getEntry("services", locale);
+if(!serviceEntries)return;
+const services = serviceEntries.data;
+---
+<SectionLayout id="services" title={props.title} left={400} width={150} section={props.name}>
+    <ul class="services_container">
+        {services.map(service => (
+            <li>
+                <div>
+                    <figure>
+                        {service.key === "front" && (<DeskIcon/>)}
+                        {service.key === "back" && (<ServerIcon/>)}
+                        {service.key === "mob" && (<MobileIcon/>)}
+                    </figure>
+                    <h4>{service.name}</h4>
+                </div>
+                <p>{service.description}</p>
+            </li>
+        ))}
+    </ul>
+</SectionLayout>

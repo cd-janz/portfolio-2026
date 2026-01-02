@@ -1,0 +1,23 @@
+---
+import "@/styles/section.scss"
+interface Props{
+    id: string
+    section: string
+    title: string,
+    left: number,
+    width: number
+}
+const {id, section, title, left, width} = Astro.props;
+---
+<section id={id}>
+    <div class="section_title">
+        <h4>{section}</h4>
+    </div>
+    <div>
+        <h3>{title}</h3>
+        <figure style={`left: ${left}px; width: ${width}px;`}/>
+    </div>
+    <div class="content">
+        <slot/>
+    </div>
+</section>

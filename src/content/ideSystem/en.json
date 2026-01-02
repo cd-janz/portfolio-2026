@@ -1,0 +1,9 @@
+{
+  "company": "company",
+  "start": "start",
+  "end": "end",
+  "summary": "summary",
+  "relevantProjects": "relevant_projects",
+  "design": "design_tools",
+  "technologies": "technologies"
+}

@@ -1,0 +1,23 @@
+:root {
+    /* --- BACKGROUND & SURFACE --- */
+    --bg: 245 247 251;
+    --surface: 255 255 255;
+    --svg: #CBD5E1;
+
+    /* --- PRIMARY (Deep Navy from Example) --- */
+    --primary: 11 32 57;
+    --primary-hover: 26 58 92;
+    --primary-focus: 6 19 35;
+
+    /* --- BORDERS & SHADOWS --- */
+    --border: 203 213 225;
+    --border-disabled: 226 232 240;
+    --border-hover: 148 163 184;
+
+    /* --- TEXT VARIANTS --- */
+    --text: 30 41 59;
+    --text-hover: 71 85 105;
+    --text-focus: 15 23 42;
+    --text-disabled: 148 163 184;
+    --text-alt: 248 250 252;
+}

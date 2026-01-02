@@ -1,0 +1,9 @@
+{
+  "company": "empresa",
+  "start": "inicio",
+  "end": "final",
+  "summary": "resumen",
+  "relevantProjects": "proyectos_relevantes",
+  "design": "herramientas_de_diseno",
+  "technologies": "tecnologias"
+}

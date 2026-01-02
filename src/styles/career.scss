@@ -1,0 +1,128 @@
+li.timeline_item{
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    >div.left{
+      text-transform: capitalize;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: flex-start;
+      >p.dates{
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      >p.difference{
+        font-family: "Jost", sans-serif;
+        font-size: 1.025rem;
+      }
+    }
+    >div.right{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-family: "Jost", sans-serif;
+      >div.title{
+        text-transform: capitalize;
+        font-family: "Teko", sans-serif;
+        >div{
+          cursor: pointer;
+          &:hover{
+            text-decoration: underline;
+          }
+          font-weight: 300;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          >h4{
+            font-size: 1.5rem;
+            font-weight: 300;
+            line-height: 1;
+          }
+          >figure{
+            width: 16px;
+            height: 16px;
+          }
+        }
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        >h4{
+          font-size: 1.5rem;
+          font-weight: 400;
+          line-height: 1;
+        }
+      }
+      >p.subtitle{
+        font-weight: 400;
+        font-size: 1.025rem;
+        text-transform: capitalize;
+      }
+    }
+    >figure{
+      width: 1.5px;
+      height: 100%;
+      position: absolute;
+      left: 210px;
+      top: 0;
+      background-color: rgb(var(--border));
+    }
+  }
+
+div.body{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  >p{
+    text-align: start;
+    padding-left: 20px;
+  }
+  >p.title{
+    text-transform: capitalize;
+    padding-left: 0;
+    font-weight: 600;
+  }
+  >ul.grid{
+    width: 100%;
+    list-style: disc;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    >li{
+      text-transform: capitalize;
+    }
+  }
+  ul.list{
+    width: 100%;
+    list-style: disc;
+  }
+}
+
+button.handler{
+  border: none;
+  border-radius: 12px;
+  background-color: transparent;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 5px 10px;
+  &:hover{
+    background-color: rgb(var(--border));
+  }
+}
+div.dropdown {
+  max-height: 0;
+  overflow: hidden;
+  width: 100%;
+  transition: max-height 0.4s ease-in-out;
+}
+
+div.dropdown.open {
+  max-height: 700px;
+}
