@@ -125,6 +125,9 @@ const services = defineCollection({
     schema: z.array(z.object({
         key: z.string(),
         name: z.string(),
+        subtitle: z.string(),
+        skills: z.array(z.string()),
+        experience: z.string(),
         description: z.string(),
     }))
 })

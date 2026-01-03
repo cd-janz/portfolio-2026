@@ -20,14 +20,24 @@ const services = serviceEntries.data;
         {services.map(service => (
             <li>
                 <div>
-                    <figure>
-                        {service.key === "front" && (<DeskIcon/>)}
-                        {service.key === "back" && (<ServerIcon/>)}
-                        {service.key === "mob" && (<MobileIcon/>)}
-                    </figure>
-                    <h4>{service.name}</h4>
+                    <div>
+                        <figure>
+                            {service.key === "front" && (<DeskIcon/>)}
+                            {service.key === "back" && (<ServerIcon/>)}
+                            {service.key === "mob" && (<MobileIcon/>)}
+                        </figure>
+                        <h4>{service.name}</h4>
+                    </div>
+                    <p>{service.experience}</p>
                 </div>
-                <p>{service.description}</p>
+                <p class="service_subtitle">"{service.subtitle}"</p>
+                <ol aria-sort="ascending">
+                    {service.skills.map((skill) => (
+                        <li>{skill}</li>
+                    ))}
+                </ol>
+                <figure/>
+                <p class="service_description">{service.description}</p>
             </li>
         ))}
     </ul>

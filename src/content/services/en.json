@@ -2,16 +2,25 @@
   {
     "key": "front",
     "name": "Frontend",
-    "description": "I view frontend development as a problem-solving discipline where performance and maintainability are just as important as the UI. Drawing from more than four years of experience, I utilize a versatile toolkit including React, Next.js, and Angular to build sophisticated, logic-heavy web applications. For projects where speed and SEO are the highest priority, I implement high-performance solutions using Astro and SolidJS. I ensure that the user interface is not only visually polished but also architecturally sound and scalable."
+    "subtitle": "Pixels with Purpose",
+    "skills": ["React", "Angular", "Next.js", "Astro", "SolidJS"],
+    "experience": "4+ years",
+    "description": "Architecturally sound and scalable user interface"
   },
   {
     "key": "back",
     "name": "Backend",
-    "description": "With over four years of experience in logic-driven engineering, I design and implement the robust \"engines\" that power enterprise-grade applications. I specialize in building scalable, secure, and highly performant server-side architectures using industry-standard stacks like Spring Boot (Java / Kotlin) and ASP.NET Core (C#), as well as modern, fast-paced environments like NestJS and TypeScript. My focus is always on writing clean, testable code and optimizing complex business logic to ensure long-term system stability and architectural integrity."
+    "subtitle": "The Engine of Innovation",
+    "skills": ["Spring Boot", "ASP.NET Core", "NestJS"],
+    "experience": "4+ years",
+    "description": "Logic-driven and performant server-side architecture"
   },
   {
     "key": "mob",
     "name": "Mobile",
-    "description": "I provide high-quality cross-platform mobile solutions that allow businesses to reach their audience on both iOS and Android from a single, efficient codebase. With nearly two years of experience in the mobile ecosystem, I have successfully delivered applications using React Native and have expanded my expertise into Flutter to create high-fidelity, native-feeling experiences. My approach focuses on bridging the gap between complex mobile logic and smooth, responsive user interactions."
+    "subtitle": "Fluid Motion in Every Hand",
+    "skills": ["React Native", "Flutter"],
+    "experience": "2+ years",
+    "description": "High-fidelity and efficient cross-platform solution"
   }
 ]
