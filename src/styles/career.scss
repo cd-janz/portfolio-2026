@@ -123,7 +123,7 @@ button.handler{
   cursor: pointer;
   padding: 8px 24px;
   &:hover{
-    background-color: rgb(var(--border));
+    background-color: rgb(var(--bg));
   }
 }
 div.dropdown {

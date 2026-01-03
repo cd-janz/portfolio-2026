@@ -47,10 +47,11 @@ ul.services_container {
       }
       >p{
         font-family: "Jost", sans-serif;
-        padding: 3px 12px;
+        padding: 2px 10px;
         background: rgb(var(--border));
         border-radius: 10px;
         text-transform: capitalize;
+        font-size: 0.925rem;
       }
     }
     >figure{
@@ -67,9 +68,10 @@ ul.services_container {
       list-style: none;
       li{
         font-family: "Jost", sans-serif;
-        padding: 3px 12px;
+        padding: 2px 10px;
         background: rgb(var(--border)/0.6);
         font-weight: 300;
+        font-size: 0.925rem;
         border-radius: 8px;
       }
     }
