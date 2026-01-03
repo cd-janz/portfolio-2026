@@ -32,7 +32,7 @@ export default function TimelineItem({data, locale}: Props){
                     -
                     <span>{data.attendance_mode}</span>
                 </p>
-                <TimelineField class="summary" label="summary">
+                <TimelineField label="summary">
                     <p>{data.summary}</p>
                 </TimelineField>
                 <TimelineDropdown related={data.related} achievements={data.achievements}
