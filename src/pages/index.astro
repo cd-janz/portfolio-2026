@@ -25,7 +25,7 @@ const [
     getCollection("experience", ({ id }) => id.startsWith(locale)),
     getCollection("education", ({ id }) => id.startsWith(locale))
 ]);
-if (!ideSystemEntry || !ideEntry || !ideNavEntry || !sectionsEntry) return;
+if (!ideSystemEntry || !ideEntry || !ideNavEntry || !sectionsEntry) return Astro.redirect("/404");
 const experience: Timeline[] = experienceEntries.map(entry => entry.data);
 const education: Timeline[] = educationEntries.map(entry => entry.data);
 const sections = sectionsEntry.data;

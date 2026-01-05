@@ -6,7 +6,6 @@ const locale = Astro.currentLocale!;
 const entry = await getEntry("hero", locale);
 if(!entry) return;
 const data = entry.data;
-const name = "Juan C. Zuñiga"
 ---
 <section>
     <div class="title-container">

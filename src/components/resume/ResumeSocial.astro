@@ -1,0 +1,9 @@
+---
+interface Props{
+    path: string
+}
+const props = Astro.props;
+---
+<a href={props.path} target="_blank">
+    <slot/>
+</a>

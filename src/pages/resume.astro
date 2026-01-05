@@ -1,6 +1,27 @@
 ---
+import "@/styles/resume.scss";
 import CoreLayout from "@/layouts/CoreLayout.astro";
+import picture from "@/assets/pictures/IMG-20251116-WA0038.jpg";
+import {getEntry} from "astro:content";
+const locale = Astro.currentLocale!;
+const [personEntry] = await Promise.all([
+    getEntry("person", locale),
+])
+if(!personEntry) return Astro.redirect("/404");
+const person = personEntry.data
+const description = locale === "en" ?
+    "Full-stack Engineer specializing in high-performance architectures. Proficiency in React, Angular & TypeScript, with a robust backend foundation in Spring Boot, ASP.NET Core, and Docker."
+    :
+    ""
 ---
-<CoreLayout title="Quick Look Janz">
+<CoreLayout title="Quick Look Janz" width="short">
+    <div class="quick_profile-container">
+        <img src={picture.src} alt="juan zuniga picture" />
+        <h4>{person.first_name} {person.last_name}</h4>
+        <h5>{person.position}</h5>
+        <p>{description}</p>
+        <div class="social_media">
 
+        </div>
+    </div>
 </CoreLayout>

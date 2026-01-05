@@ -11,6 +11,6 @@ const data = entry.data;
     <img src="/name.svg" alt="janz icon" />
     <Nav />
     <div class="header_right">
-        <a href={`/${locale}/resume`} class="btn primary">{data.resume}</a>
+        <a href={`${locale === "en" ? "" : "/".concat(locale)}/resume`} class="btn primary">{data.resume}</a>
     </div>
 </header>

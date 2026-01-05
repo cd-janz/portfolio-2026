@@ -6,13 +6,13 @@ ul.projects_container{
   >li.project_container{
     border: 1px solid rgb(var(--border));
     border-radius: 15px;
-    background-color: rgb(var(--surface)/0.4);
+    background-color: rgb(var(--bg));
     transition: color 300ms ease-in-out, transform 300ms ease-in-out;
     cursor: pointer;
     &:hover{
-      background-color: rgb(var(--surface));
+      background-color: rgb(var(--surface)/0.4);
       border: 1px solid rgb(var(--border-hover));
-      transform: scale(1.05);
+      transform: scale(1.01);
     }
     >picture{
       width: 100%;

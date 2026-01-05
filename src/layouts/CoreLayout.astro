@@ -5,11 +5,13 @@ import "@/styles/fonts.css";
 import "@/styles/reset.css";
 import "@/styles/global.scss";
 import Header from "../components/Header.astro";
+import clsx from "clsx";
 interface Props{
-    title: string
+    title: string,
+    width?: "short" | "full";
 }
 const locale = Astro.currentLocale!
-const {title} = Astro.props;
+const {title, width} = Astro.props;
 ---
 <html lang={locale}>
     <head>
@@ -21,8 +23,10 @@ const {title} = Astro.props;
     </head>
     <body style="position: relative" id="home">
         <HeroDecoration/>
-        <main id="main">
-            <Header/>
+        <main id="main" class={clsx(width ? width : "full")}>
+            {width !== "short" && (
+                <Header />
+            )}
             <slot/>
         </main>
     </body>
@@ -32,7 +36,7 @@ const {title} = Astro.props;
             if(!loaded) return;
             setTimeout(()=>{
                 window.scroll({top: Number(loaded), behavior: "smooth"});
-            }, 100);
+            }, 150);
         })
         document.addEventListener("scrollend", () => {
             localStorage.setItem("scrollTop", window.pageYOffset.toString());
