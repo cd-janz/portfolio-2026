@@ -1,0 +1,9 @@
+---
+interface Props{
+    label: string
+}
+const props = Astro.props;
+---
+<button id="contact_submit" type="submit">
+    {props.label}
+</button>

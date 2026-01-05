@@ -1,0 +1,92 @@
+---
+import "@/styles/contact.scss";
+import SectionLayout from "@/layouts/SectionLayout.astro";
+import {getEntry} from "astro:content";
+import EmailIcon from "@/assets/icons/system/EmailIcon.astro";
+import SocialMedia from "@/components/contact/SocialMedia.astro";
+import PhoneIcon from "@/assets/icons/system/PhoneIcon.astro";
+import GithubIcon from "@/assets/icons/system/GithubIcon.astro";
+import WhatsappIcon from "@/assets/icons/system/WhatsappIcon.astro";
+import TelegramIcon from "@/assets/icons/system/TelegramIcon.astro";
+import ContactInput from "@/components/contact/ContactInput.astro";
+import ContactTextArea from "@/components/contact/ContactTextArea.astro";
+import ContactSubmit from "@/components/contact/ContactSubmit.astro";
+interface Props{
+    name: string,
+    title: string,
+}
+const props = Astro.props;
+const locale = Astro.currentLocale!;
+const system = (await getEntry("contact", locale))?.data;
+const person = (await getEntry("info", locale))?.data;
+if(!system || !person) return Astro.redirect("/404")
+
+---
+<SectionLayout id="contact" section={props.name} title={props.title} left={420} width={250}>
+    <div class="contact_container">
+        <div class="left">
+            <div class="title">
+                <h4>{system.title_one}</h4>
+                <p>{system.subtitle_one}</p>
+            </div>
+            <div class="social_media">
+                <SocialMedia label={person.email} link={`mailto:${person.email}`}><EmailIcon/></SocialMedia>
+                <SocialMedia label={person.phone}><PhoneIcon/></SocialMedia>
+                <SocialMedia label={person.github} link={person.github_link}><GithubIcon/></SocialMedia>
+                <SocialMedia label={person.phone} link={person.whatsapp_link}><WhatsappIcon/></SocialMedia>
+                <SocialMedia label={person.telegram} link={person.telegram_link}><TelegramIcon/></SocialMedia>
+            </div>
+        </div>
+        <div class="right">
+            <div class="title">
+                <h4>{system.title_two}</h4>
+                <p>{system.subtitle_two}</p>
+            </div>
+            <form method="POST" id="contact">
+                <ContactInput id="name" label="name" required />
+                <ContactInput id="email" label="email" required />
+                <ContactInput id="phone" label="phone"/>
+                <ContactInput id="subject" label="subject" cols="col-3" required />
+                <ContactTextArea id="message" label="message" cols="col-3" />
+                <div class="col-2"/>
+                <ContactSubmit label="submit"/>
+            </form>
+        </div>
+    </div>
+    <script>
+        import { actions } from 'astro:actions';
+
+        const setupForm = () => {
+            const contactForm = document.getElementById("contact") as HTMLFormElement | null;
+
+            contactForm?.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const target = event.target as HTMLFormElement;
+                if (!(target instanceof HTMLFormElement)) return;
+                const btn = target.querySelector('button') as HTMLButtonElement;
+                const originalText = btn.innerText;
+                try {
+                    btn.disabled = true;
+                    btn.innerText = "Sending...";
+                    const formData = new FormData(target);
+                    const { data, error } = await actions.sendContact(formData);
+                    if (error) {
+                        console.error("Action error:", error);
+                        alert("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
+                    } else {
+                        console.log("Éxito:", data);
+                        alert("¡Mensaje enviado con éxito!");
+                        target.reset();
+                    }
+
+                } catch (err) {
+                    console.error("Error inesperado:", err);
+                } finally {
+                    btn.disabled = false;
+                    btn.innerText = originalText;
+                }
+            });
+        };
+        setupForm();
+    </script>
+</SectionLayout>

@@ -17,17 +17,20 @@ export default function JsonDocumentLine(props: Props){
                 class="document_line-content">
                 <p>
                     {props.content ? (
-                            <span class={clsx(!props.noColor && "value")}>{props.content}</span>
+                            <span class={clsx(!props.noColor && "value")}>
+                                {props.content}
+                                {!props.noComma && ","}
+                            </span>
                         ) : (
                         <>
                             <span class="field">"{props.field}":</span>
                             <span class={clsx(!props.noColor && "value", props.value)}>
                                 {props.value}
                             </span>
+                            {!props.noComma && ","}
                         </>
                     )}
                 </p>
-                {props.noComma ? "" : ","}
             </div>
         </li>
     )

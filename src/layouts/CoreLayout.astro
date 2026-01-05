@@ -21,8 +21,10 @@ const {title} = Astro.props;
     </head>
     <body style="position: relative" id="home">
         <HeroDecoration/>
-        <Header/>
-        <main id="main"><slot/></main>
+        <main id="main">
+            <Header/>
+            <slot/>
+        </main>
     </body>
     <script>
         document.addEventListener("DOMContentLoaded", ()=> {

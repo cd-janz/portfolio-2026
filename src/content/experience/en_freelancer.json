@@ -5,9 +5,16 @@
   "attendance_mode": "remote",
   "location": "Santa Marta, Colombia",
   "summary": "Managed end-to-end development cycles for cross-platform applications, ensuring seamless integration between complex backend logic and user-facing environments.",
-  "responsibilities": [],
   "start": "04/2025",
-  "relevantProjects": [
+  "responsibilities": [
+    "Design",
+    "Management",
+    "Development",
+    "Quality Assurance",
+    "Deployment",
+    "Maintenance"
+  ],
+  "projects": [
     "Mobile Athletic Training & Blog Application",
     "Industrial Recycling Scheduling & Management Platform",
     "Enterprise Web Performance Optimization & Redesign",
@@ -19,5 +26,6 @@
     "Angular", "Redux", "Nest", "Astro", "Spring Boot",
     "ASP.NET Core"
   ],
+  "related": ["IGD S.A.S"],
   "status": "able"
 }

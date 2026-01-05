@@ -35,10 +35,11 @@ li.timeline_item{
       justify-content: flex-start;
       font-family: "Jost", sans-serif;
       padding: 0 20px;
+      gap: 10px;
       >div.title{
         text-transform: capitalize;
         font-family: "Teko", sans-serif;
-        >div{
+        >a{
           cursor: pointer;
           &:hover{
             text-decoration: underline;
@@ -98,12 +99,21 @@ div.body{
   }
   >ul.grid{
     width: 100%;
-    list-style: disc;
+    list-style: none;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
+    padding-top: 10px;
+    padding-left: 5px;
     >li{
       text-transform: capitalize;
+      padding: 2px 0;
+      background: rgb(var(--bg));
+      text-align: center;
+      border: 1px solid rgb(var(--border)/0.5);
+      border-radius: 8px;
+      font-weight: 300;
+      font-size: 0.975rem;
     }
   }
   ul.list{
@@ -131,6 +141,9 @@ div.dropdown {
   overflow: hidden;
   width: 100%;
   transition: max-height 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 div.dropdown.open {

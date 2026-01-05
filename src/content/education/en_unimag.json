@@ -6,9 +6,18 @@
   "location": "Santa Marta, Colombia",
   "summary": "Foundational engineering training focused on the intersection of system logic and enterprise architecture. This period served as the catalyst for mastering clean code principles and full-stack integration, bridging academic rigor with modern high-performance technologies to build scalable, production-ready solutions.",
   "start": "08/2019",
+  "projects": [
+    "Campus Social Platform",
+    "Microservices Flight Manager",
+    "E-Commerce Suite"
+  ],
   "technologies": [
     "React.js", "Spring Boot", "Next.js",
     "SCSS", "Docker"
   ],
-  "status": "temporarily paused"
+  "status": "temporarily paused",
+  "related": [
+    "Oracle Apex IEEE Bootcamp"
+  ],
+  "path": "https://www.unimagdalena.edu.co/"
 }

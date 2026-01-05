@@ -1,0 +1,20 @@
+---
+interface Props{
+    label: string,
+    link?: string
+}
+const props = Astro.props;
+---
+<>
+    {props.link ? (
+        <a href={props.link} target="_blank" class="social_link">
+            <slot/>
+            <p>{props.label}</p>
+        </a>
+    ): (
+        <div class="social_link">
+            <slot/>
+            <p>{props.label}</p>
+        </div>
+    )}
+</>

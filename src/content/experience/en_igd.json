@@ -7,6 +7,20 @@
   "summary": "Led the development and migration of enterprise-grade fintech and accounting SaaS platforms. Engineered scalable backend architectures using Nest.js and ASP.NET Core, while delivering high-performance frontend solutions with Next.js and Astro.",
   "start": "01/01/2021",
   "end": "28/02/2025",
+  "responsibilities": [
+    "Design",
+    "Development",
+    "Quality Assurance",
+    "Deployment",
+    "Maintenance"
+  ],
+  "achievements": [
+    "Optimized core system scalability and concurrency, reducing latency by 17% across mission-critical platforms.",
+    "Led legacy modernization and technical debt reduction, boosting team productivity by 12% and decreasing incidents.",
+    "Architected engineering standards and design patterns to enhance platform consistency and maintainability.",
+    "Engineered high-performance data models and workflows using SQL/NoSQL, significantly increasing system throughput.",
+    "Spearheaded strategic full-stack initiatives as a technical lead, aligning engineering solutions with business goals."
+  ],
   "projects": [
     "Web application for managing cryptocurrency transactions.",
     "Migration and update of the main SaaS.",
@@ -17,5 +31,6 @@
     "react", "next", "tailwind", "scss", "angular", "astro", "asp.net core",
     "spring boot", "nest", "docker"
   ],
-  "status": "freelancing"
+  "status": "freelancing",
+  "path": "https://igdsas.com/"
 }

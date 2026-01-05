@@ -1,0 +1,35 @@
+---
+import ProjectsGrid from "@/components/ProjectsGrid.tsx";
+import SectionLayout from "@/layouts/SectionLayout.astro";
+import {getCollection, render} from "astro:content";
+interface Props{
+    name: string,
+    title: string,
+}
+const props = Astro.props;
+const locale = Astro.currentLocale!;
+const rawProjects = await getCollection("projects", ({ id }) =>
+    id.startsWith(locale)
+);
+
+const projects = await Promise.all(
+    rawProjects.map(async (project) => {
+        const rendered = await render(project);
+        return {
+            id: project.id,
+            data: project.data,
+            content: rendered.Content
+        };
+    })
+);
+const metadata = projects.map(p => ({id: p.id, data: p.data}))
+---
+<SectionLayout id="projects" section={props.name} title={props.title} left={350} width={175}>
+    <ProjectsGrid client:only projects={metadata}>
+        {projects.map(p => (
+            <div data-id={p.id}>
+                <p.content />
+            </div>
+        ))}
+    </ProjectsGrid>
+</SectionLayout>

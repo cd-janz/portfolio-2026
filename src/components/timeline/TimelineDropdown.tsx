@@ -21,7 +21,7 @@ export default function TimelineDropdown(props: Props){
                     <>
                         {props.responsibilities && props.responsibilities.length > 0 && (
                             <TimelineField label="responsibilities">
-                                <TimelineList class="list" data={props.responsibilities} />
+                                <TimelineList class="grid" data={props.responsibilities} />
                             </TimelineField>
                         )}
                         {props.achievements && props.achievements.length > 0 && (

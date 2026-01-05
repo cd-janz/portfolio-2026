@@ -4,5 +4,9 @@
   "services": "services",
   "title_services": "Where Logic Meets Value",
   "career": "career",
-  "title_career": "the man behind the architecture"
+  "title_career": "the man behind the architecture",
+  "projects": "projects",
+  "title_projects": "Where Concepts Breathe",
+  "contact": "contact",
+  "title_contact": "Building the Human Connection"
 }

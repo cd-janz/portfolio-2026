@@ -17,7 +17,7 @@ export default function JsonDocumentList(props: Props) {
         <>
             <JsonDocumentLine id={index()} field={props.field} value={"["} noColor noComma tab={1}/>
             {!props.special && props.value.map((item, i)=>(
-                <JsonDocumentLine id={props.index+1+i} content={`"${item}"`} noComma={i + 1 >= max } tab={5} />
+                <JsonDocumentLine id={props.index+1+i} content={`"${item}"`} noComma={i + 1 >= max } tab={3} />
             ))}
             {props.special && (
                 <For each={Array.from({ length: Math.ceil(props.value.length / 3) })}>
@@ -28,7 +28,7 @@ export default function JsonDocumentList(props: Props) {
                             <JsonListLine
                                 id={index() + 1 + i()}
                                 values={chunk}
-                                tab={5}
+                                tab={3}
                                 noComma={i() + 1 >= Math.ceil(props.value.length / 3)}
                             />
                         );

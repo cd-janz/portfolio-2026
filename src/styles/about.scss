@@ -11,6 +11,10 @@ div.about_container {
   border-radius: 15px;
   box-shadow: 5px 5px 10px rgba(var(--border));
   background: rgb(var(--bg));
+  transition: transform 300ms ease;
+  &:hover{
+    transform: scale(1.025);
+  }
   >figure{
     width: 1px;
     height: 100%;

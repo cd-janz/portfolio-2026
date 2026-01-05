@@ -1,0 +1,13 @@
+---
+import clsx from "clsx";
+interface Props{
+    id: string,
+    label: string,
+    cols?: string
+}
+const props = Astro.props;
+---
+<div class={clsx("contact_input", props.cols)}>
+    <label for={props.id}>{props.label}</label>
+    <textarea id={props.id} name={props.id} />
+</div>

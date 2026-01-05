@@ -1,0 +1,123 @@
+div.contact_container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border: 1px solid rgb(var(--border));
+  border-radius: 15px;
+  font-family: "Jost", sans-serif;
+  >div{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: start;
+    >div.title{
+      >h4{
+        font-family: "Teko", sans-serif;
+        font-size: 2.125rem;
+      }
+      >p{
+        font-weight: 300;
+        font-size: 1.025rem;
+      }
+    }
+  }
+  >div.left{
+    border-right: 1px solid rgb(var(--border));
+    justify-content: space-between;
+    >div.social_media{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      padding-left: 10px;
+      >a.social_link{
+        &:hover{
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      >.social_link{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        >svg{
+          color: rgb(var(--text-hover)/0.8);
+          width: 20px;
+          height: 20px;
+        }
+        >p{
+          color: rgb(var(--text-hover));
+          text-transform: none;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  >div.right{
+    >form{
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 15px;
+      row-gap: 30px;
+      align-items: center;
+      padding: 15px 0;
+      >div.col-2{
+        grid-column: span 2;
+      }
+      >div.col-3{
+        grid-column: span 3;
+      }
+      >div.contact_input{
+        position: relative;
+        >label{
+          position: absolute;
+          top: -15px;
+          left: 15px;
+          background: rgb(var(--bg));
+          padding: 2px 6px;
+          font-size: 0.975rem;
+          text-transform: capitalize;
+          font-weight: 400;
+          >svg{
+            position: absolute;
+            right: -5px;
+            width: 10px;
+            height: 10px;
+            color: red;
+          }
+        }
+        >input,textarea{
+          width: 100%;
+          height: 40px;
+          border: 1px solid rgb(var(--border));
+          border-radius: 6px;
+          background: none;
+          outline: none;
+          padding: 0 10px;
+          font-size: 1.025rem;
+        }
+        >textarea{
+          padding-top: 10px;
+          height: 120px;
+        }
+      }
+      >button{
+        background: rgb(var(--primary));
+        color: rgb(var(--text-alt));
+        text-transform: capitalize;
+        height: 40px;
+        outline: none;
+        border: 1px solid rgb(var(--border));
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover{
+          background: rgb(var(--primary-hover));
+        }
+      }
+    }
+  }
+}

@@ -11,7 +11,7 @@ import solidJs from '@astrojs/solid-js';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap(), mdx(), solidJs({ devtools: true })],
+  integrations: [sitemap(), solidJs({ devtools: true })],
   adapter: vercel(),
   i18n: {
     defaultLocale: 'en',

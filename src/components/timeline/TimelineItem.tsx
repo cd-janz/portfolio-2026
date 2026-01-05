@@ -22,10 +22,10 @@ export default function TimelineItem({data, locale}: Props){
                 <div class="title">
                     <h4>{data.position_program}</h4>
                     -
-                    <div>
+                    <a href={data.path} target="_blank" rel="noopener noreferrer">
                         <h4>{data.institution}</h4>
                         <figure><LinkIslandIcon /></figure>
-                    </div>
+                    </a>
                 </div>
                 <p class="subtitle">
                     <span>{data.location}</span>

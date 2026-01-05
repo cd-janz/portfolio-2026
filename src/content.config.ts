@@ -104,6 +104,10 @@ const sections = defineCollection({
         title_services: z.string(),
         career: z.string(),
         title_career: z.string(),
+        projects: z.string(),
+        title_projects: z.string(),
+        contact: z.string(),
+        title_contact: z.string(),
     })
 })
 const person = defineCollection({
@@ -131,8 +135,56 @@ const services = defineCollection({
         description: z.string(),
     }))
 })
+const projectSchema = z.object({
+    picture: z.optional(z.string()),
+    year: z.string(),
+    type: z.enum(["personal", "enterprise"]),
+    metrics: z.optional(z.string()),
+    name: z.string(),
+    short_description: z.string(),
+    skills: z.array(z.string()),
+    position: z.optional(z.string()),
+    collaborators: z.optional(z.string()),
+    repo: z.optional(z.string()),
+    live: z.optional(z.string()),
+})
+const projects = defineCollection({
+    loader: glob({pattern: "**/*.md", base: "./src/content/projects"}),
+    schema: projectSchema
+})
+const contactSchema = z.object({
+    title_one: z.string(),
+    title_two: z.string(),
+    subtitle_one: z.string(),
+    subtitle_two: z.string(),
+    phone: z.string(),
+    name: z.string(),
+    subject: z.string(),
+    message: z.string(),
+    send: z.string()
+})
+const contact = defineCollection({
+    loader: glob({pattern: "*.json", base: "./src/content/contact"}),
+    schema: contactSchema
+})
+const infoSchema = z.object({
+    email: z.string(),
+    github: z.string(),
+    github_link: z.string(),
+    linkedin: z.string(),
+    linkedin_link: z.string(),
+    phone: z.string(),
+    whatsapp_link: z.string(),
+    telegram: z.string(),
+    telegram_link: z.string()
+})
+const info = defineCollection({
+    loader: glob({pattern: "*.json", base: "./src/content/info"}),
+    schema: infoSchema
+})
 export const collections = {nav, header, hero, ide, ideSystem, experience, education, courses, ideNav, sections, person,
-services}
+services, projects, contact, info}
+export type Project = z.infer<typeof projectSchema>;
 export type Timeline = z.infer<typeof timelineSchema>;
 export type IDESystem = z.infer<typeof ideSystemSchema>;
 export type IDENav = z.infer<typeof ideNavSchema>;

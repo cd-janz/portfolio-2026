@@ -54,8 +54,6 @@ export default function TimelineDocument(props: Props){
                 rows.push(<JsonDocumentMultiline index={nextId()} field={labels().summary} value={summary} />);
                 nextId(summary.length-1);
                 const lists = [
-                    { key: labels().responsibilities, val: data().responsibilities },
-                    { key: labels().achievements, val: data().achievements },
                     { key: labels().projects, val: data().projects }
                 ];
                 lists.forEach(({ key, val }) => {
