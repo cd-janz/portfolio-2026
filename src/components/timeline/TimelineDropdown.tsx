@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import {createSignal} from "solid-js";
+import {createEffect, createSignal} from "solid-js";
 import TimelineField from "@/components/timeline/TimelineField.tsx";
 import TimelineList from "@/components/timeline/TimelineList.tsx";
 
@@ -12,11 +12,24 @@ interface Props {
     related?: string[]
 
 }
-export default function TimelineDropdown(props: Props){
+export default function TimelineDropdown(props: Props) {
     const [open, setOpen] = createSignal<boolean>(false);
-    return(
+    let contentRef!: HTMLDivElement;
+
+    createEffect(() => {
+        const isOpen = open();
+        if (contentRef) {
+            if (isOpen) {
+                contentRef.style.height = contentRef.scrollHeight + "px";
+            } else {
+                contentRef.style.height = "0px";
+            }
+        }
+    });
+
+    return (
         <>
-            <div class={clsx("dropdown", open() ? "open" : "close")}>
+            <div ref={contentRef} class="dropdown">
                 {open() && (
                     <>
                         {props.responsibilities && props.responsibilities.length > 0 && (
@@ -47,7 +60,9 @@ export default function TimelineDropdown(props: Props){
                     </>
                 )}
             </div>
-            <button class="handler" onClick={() => setOpen(prev => !prev)}>{props.label}</button>
+            <button class="handler" onClick={() => setOpen(prev => !prev)}>
+                {props.label}
+            </button>
         </>
-    )
+    );
 }

@@ -1,10 +1,10 @@
 li.timeline_item{
   &:hover{
-    background: rgb(var(--surface)/0.8);
+    background: rgb(var(--surface)/0.6);
   }
   background: rgb(var(--bg));
   border-radius: 12px;
-  transition: color 300ms ease;
+  transition: color 300ms ease-in-out;
     padding: 20px 0;
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -121,12 +121,10 @@ div.body{
     list-style: disc;
   }
 }
-
 button.handler{
   margin-top: 10px;
   border: none;
   border-radius: 10px;
-  background-color: transparent;
   width: 100%;
   font-weight: 600;
   text-transform: capitalize;
@@ -137,15 +135,8 @@ button.handler{
   }
 }
 div.dropdown {
-  max-height: 0;
   overflow: hidden;
   width: 100%;
-  transition: max-height 0.4s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-div.dropdown.open {
-  max-height: 700px;
+  transition: height 0.3s ease-out;
+  height: 0;
 }
