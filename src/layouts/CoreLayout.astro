@@ -6,6 +6,7 @@ import "@/styles/reset.css";
 import "@/styles/global.scss";
 import Header from "../components/Header.astro";
 import clsx from "clsx";
+import Footer from "@/components/Footer.astro";
 interface Props{
     title: string,
     width?: "short" | "full";
@@ -28,6 +29,7 @@ const {title, width} = Astro.props;
                 <Header />
             )}
             <slot/>
+            <Footer/>
         </main>
     </body>
     <script>
