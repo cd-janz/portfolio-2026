@@ -2,26 +2,120 @@
 import "@/styles/resume.scss";
 import CoreLayout from "@/layouts/CoreLayout.astro";
 import picture from "@/assets/pictures/IMG-20251116-WA0038.jpg";
-import {getEntry} from "astro:content";
+import {getCollection, getEntry} from "astro:content";
+import ResumeSocial from "@/components/resume/ResumeSocial.astro";
+import EmailIcon from "@/assets/icons/system/EmailIcon.astro";
+import GithubIcon from "@/assets/icons/system/GithubIcon.astro";
+import LinkedinIcon from "@/assets/icons/system/LinkedinIcon.astro";
+import WhatsappIcon from "@/assets/icons/system/WhatsappIcon.astro";
+import TelegramIcon from "@/assets/icons/system/TelegramIcon.astro";
+import ResumeItemsContainer from "@/components/resume/ResumeItemsContainer.astro";
+import type {Project, Timeline} from "@/content.config.ts";
 const locale = Astro.currentLocale!;
-const [personEntry] = await Promise.all([
+const [
+    personEntry,
+    infoEntry,
+    educationEntries,
+    experienceEntries,
+    coursesEntries,
+    projectsEntries
+] = await Promise.all([
     getEntry("person", locale),
+    getEntry("info", locale),
+    getCollection("education", ({ id }) => id.startsWith(locale)),
+    getCollection("experience", ({id}) => id.startsWith(locale)),
+    getCollection("courses", ({id}) => id.startsWith(locale)),
+    getCollection("projects", ({id}) => id.startsWith(locale))
 ])
-if(!personEntry) return Astro.redirect("/404");
+if(!personEntry || !infoEntry) return Astro.redirect("/404");
 const person = personEntry.data
+const info = infoEntry.data
+const education: Timeline[] = [...experienceEntries, ...educationEntries, ...coursesEntries]
+    .map(entry => entry.data);
+const projects: Project[] = projectsEntries.map(item => item.data);
 const description = locale === "en" ?
     "Full-stack Engineer specializing in high-performance architectures. Proficiency in React, Angular & TypeScript, with a robust backend foundation in Spring Boot, ASP.NET Core, and Docker."
     :
     ""
 ---
 <CoreLayout title="Quick Look Janz" width="short">
+    <header class="quick_header">
+        <button id="back">come back</button>
+    </header>
     <div class="quick_profile-container">
-        <img src={picture.src} alt="juan zuniga picture" />
-        <h4>{person.first_name} {person.last_name}</h4>
-        <h5>{person.position}</h5>
-        <p>{description}</p>
-        <div class="social_media">
-
+        <div class="quick_profile">
+            <img src={picture.src} alt="juan zuniga picture" />
+            <h4>{person.first_name} {person.last_name}</h4>
+            <h5>{person.position}</h5>
+            <p>{description}</p>
+            <div class="social_media">
+                <ResumeSocial path={`mailto:${info.email}`}>
+                    <EmailIcon/>
+                </ResumeSocial>
+                <ResumeSocial path={info.github_link}>
+                    <GithubIcon/>
+                </ResumeSocial>
+                <ResumeSocial path={info.linkedin_link}>
+                    <LinkedinIcon/>
+                </ResumeSocial>
+                <ResumeSocial path={info.whatsapp_link}>
+                    <WhatsappIcon/>
+                </ResumeSocial>
+                <ResumeSocial path={info.telegram_link}>
+                    <TelegramIcon/>
+                </ResumeSocial>
+            </div>
         </div>
+        <ResumeItemsContainer class="list" title="education & experience">
+            {[...education].map(entry => (
+                <div class="resume_item-list">
+                    <figure/>
+                    <div class="resume_item-list--item">
+                        <h4>{entry.position_program} - {entry.institution}</h4>
+                        <p>
+                            <span>{entry.start}{entry.end ? ` - ${entry.end}` : ""}</span> |
+                            <span>{entry.attendance_mode}</span>
+                        </p>
+                        <ul>
+                            {entry.technologies.map(skill => (
+                                <li>{skill}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            ))}
+        </ResumeItemsContainer>
+        <ResumeItemsContainer title="projects" class="grid">
+            {projects.map(project => (
+                <div class="resume_item-grid">
+                    <picture>
+                        {project.picture ? (
+                            <img src={project.picture} alt={`${project.name} project picture`}/>
+                        ) : (
+                            <h3>NOT FOUND</h3>
+                        )}
+                    </picture>
+                    <div class="project_body">
+                        <h5>{project.name}</h5>
+                        <p>{project.short_description.substring(0, 75)}...</p>
+                        <ul>
+                            {project.skills.slice(0, 3).map(skill => (
+                                <li>{skill}</li>
+                            ))}
+                            {project.skills.length > 3 && (
+                                <li>+{project.skills.length - 3}</li>
+                            )}
+                        </ul>
+                        <p class="details">see full details</p>
+                    </div>
+                </div>
+            ))}
+        </ResumeItemsContainer>
     </div>
+    <script>
+        const back = document.getElementById("back");
+        back?.addEventListener("click", () => {
+            window.history.back();
+        })
+    </script>
 </CoreLayout>

@@ -1,0 +1,14 @@
+---
+import clsx from "clsx";
+interface Props{
+    title: string
+    class?: string
+}
+const props = Astro.props;
+---
+<div class="resume_item-container">
+    <h5>{props.title}</h5>
+    <div class={clsx("resume_item-content", props.class)}>
+        <slot/>
+    </div>
+</div>
