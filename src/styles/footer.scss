@@ -1,0 +1,117 @@
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  border-top: 1px solid rgb(var(--border));
+  position: relative;
+  overflow: hidden;
+  >div.footer_content-container{
+    width: var(--page-width);
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px 0;
+    .contact{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      >div.title{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        font-family: "Teko", sans-serif;
+        font-size: 1.725rem;
+        font-weight: 300;
+      }
+      >div.content{
+        padding-left: calc(1.725rem + 25px);
+        display: flex;
+        flex-direction: column;
+        color: rgb(var(--text-hover));
+        >a{
+          font-family: "Jost", sans-serif;
+          font-weight: 400;
+          font-size: 1.1rem;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        >p{
+          font-family: "Jost", sans-serif;
+          font-size: 0.875rem;
+          font-weight: 300;
+        }
+      }
+    }
+    .sitemap{
+      text-transform: capitalize;
+      display: flex;
+      flex-direction: column;
+      justify-self: end;
+      text-align: end;
+      >h3{
+        padding: 5px 0;
+      }
+      >a{
+        font-weight: 300;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    >.social{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      >a{
+        border-radius: 50%;
+        color: rgb(var(--text-disabled));
+        border: 1px solid rgb(var(--border));
+        padding: 6px;
+        background: rgb(var(--border-disabled));
+        &:hover{
+          color: rgb(var(--border-hover));
+          background: rgb(var(--border));
+        }
+        >svg{
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
+  }
+  >figure{
+    position: absolute;
+    color: rgb(var(--border));
+    bottom: 0;
+  }
+  >figure.left{
+    left: 0;
+    width: 80px;
+  }
+  >figure.center{
+    width: 100%;
+    left: -20%;
+    z-index: -2;
+    color: rgb(var(--border-hover));
+  }
+  >figure.right{
+    right: 0;
+    width: 180px;
+  }
+}
+div.cc{
+  width: 100%;
+  height: fit-content;
+  border-top: 1px solid rgb(var(--border));
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}

@@ -9,6 +9,8 @@ html{
   color: rgb(var(--pxtext));
   interpolate-size: allow-keywords;
   scroll-behavior: smooth;
+  --page-width: 75%;
+  --page-small-width: 45%
 }
 body .bordered{
   border: 1px solid rgb(var(--border));
@@ -28,11 +30,11 @@ main{
 }
 main.full{
   margin-top: 125px;
-  max-width: 75%;
+  max-width: var(--page-width);
 }
 main.short{
   margin-top: 80px;
-  max-width: 45%;
+  max-width: var(--page-small-width);
 }
 a{
   text-decoration: none;
