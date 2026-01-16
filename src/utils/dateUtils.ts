@@ -25,6 +25,15 @@ export function parseDate(dateStr: string): Date {
 }
 export function formatWithLocale(date: number[], locale: string){
     if(date.length !== 2) throw new Error("Must have only 2 values");
-    if(locale === 'es') return `${date[0]} años - ${date[1]} meses`;
-    return `${date[0]} years - ${date[1]} months`;
+    if(date[0] > 0 && date[1] > 0){
+        if(locale === 'es') return `${date[0]} años - ${date[1]} meses`;
+        return `${date[0]} years - ${date[1]} months`;
+    }else if(date[0] > 0 && date[1] <= 0){
+        if(locale === "es") return `${date[0]} años`
+        return `${date[0]} years`
+    }else if(date[0] <= 0 && date[1] > 0){
+        if(locale === "es") return `${date[1]} meses`
+        return `${date[1]} months`
+    }
+    return "undated"
 }

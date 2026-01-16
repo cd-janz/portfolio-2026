@@ -9,11 +9,10 @@ div.about_container {
   gap: 5px;
   border: 1px solid rgb(var(--border));
   border-radius: 15px;
-  box-shadow: 5px 5px 10px rgba(var(--border));
   background: rgb(var(--bg));
-  transition: transform 300ms ease-in-out, color 300ms ease-in-out;
+  transition: color 300ms ease-in-out, box-shadow 300ms ease-in-out;
   &:hover{
-    transform: scale(1.01);
+    box-shadow: 5px 5px 10px rgba(var(--border));
     background: rgb(var(--surface)/0.4);
   }
   >figure{

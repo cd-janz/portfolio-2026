@@ -13,29 +13,33 @@ section{
   gap: 15px;
   position: relative;
   width: 800px;
-  >figure.vector{
-    width: 340px;
-    height: 20px;
-    background: rgba(var(--border-hover));
-    position: absolute;
-    top: 57%;
-    left: 220px;
-    z-index: 0;
-    border-radius: 20px;
-  }
   >h1.title{
     font-weight: 400;
     font-size: 5.75rem;
     text-align: center;
     line-height: 0.9;
+    position: relative;
     z-index: 1;
     white-space: pre-wrap;
+    display: flex;
+    justify-content: center;
+    &:before{
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 20px;
+      bottom: 15px;
+      background: rgb(var(--border-hover)/0.8);
+      z-index: -5;
+      border-radius: 10px;
+    }
   }
   >h4.description{
     font-family: "Jost", sans-serif;
     font-size: 1rem;
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
+    white-space: pre-wrap;
   }
 }
 .form-container{
@@ -46,7 +50,7 @@ section{
   box-sizing: border-box;
   align-items: center;
   border-radius: 25px;
-  padding: 5px;
+  padding: 2.5px;
   &:focus-within{
     border-color: rgb(var(--border-hover));
     box-shadow: 0 0 0 1px rgba(var(--primary), 0.1);
@@ -62,7 +66,7 @@ section{
     align-items: center;
     color: rgb(var(--text-hover));
   }
-  >div{
+  >form{
     display: flex;
     align-items: center;
     position: relative;
@@ -79,18 +83,21 @@ section{
         text-transform: capitalize;
         font-size: 0.875rem;
       }
-      &:invalid{
-        color: indianred;
-      }
     }
-    >div.btn{
+    >button.btn{
       position: absolute;
       right: 0;
       font-weight: 300;
       font-family: "Jost", sans-serif;
-      padding: 5px 20px;
+      padding: 5px 25px;
       height: 100%;
       border-radius: 25px;
+      background: rgb(var(--surface));
+      border: 1px solid rgb(var(--border-disabled));
+      font-size: 1rem;
+      &:focus{
+        outline: none;
+      }
     }
   }
 }

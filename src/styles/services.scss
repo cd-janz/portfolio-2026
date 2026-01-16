@@ -1,20 +1,20 @@
 ul.services_container {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
   >li{
+    width: 32%;
     border: 1px solid rgb(var(--border));
     padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: color 300ms ease, transform 300ms ease;
-    box-shadow: 5px 5px 10px rgb(var(--border)/0.5);
+    transition: color 300ms ease, box-shadow 300ms ease;
     &:hover{
       background-color: rgb(var(--surface)/0.4);
-      transform: scale(1.01);
+      box-shadow: 5px 5px 10px rgb(var(--border));
     }
     >div{
       width: 100%;

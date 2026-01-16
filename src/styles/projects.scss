@@ -4,15 +4,14 @@ ul.projects_container{
   gap: 10px;
   list-style: none;
   >li.project_container{
-    border: 1px solid rgb(var(--border));
-    border-radius: 15px;
+    border: 1px solid rgb(var(--border-disabled));
+    border-radius: 20px;
     background-color: rgb(var(--bg));
-    transition: color 300ms ease-in-out, transform 300ms ease-in-out;
+    transition: color 300ms ease-in-out, border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
     cursor: pointer;
     &:hover{
-      background-color: rgb(var(--surface)/0.4);
-      border: 1px solid rgb(var(--border-hover));
-      transform: scale(1.01);
+      background-color: rgb(var(--surface));
+      box-shadow: 5px 5px 10px rgb(var(--border));
     }
     >picture{
       width: 100%;

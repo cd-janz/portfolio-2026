@@ -16,11 +16,13 @@ div.contact_container {
     >div.title{
       >h4{
         font-family: "Teko", sans-serif;
-        font-size: 2.125rem;
+        font-size: 2.25rem;
       }
       >p{
         font-weight: 300;
-        font-size: 1.025rem;
+        font-size: 1rem;
+        text-align: start;
+        white-space: pre-wrap;
       }
     }
   }
@@ -62,7 +64,7 @@ div.contact_container {
       width: 100%;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 15px;
-      row-gap: 30px;
+      row-gap: 20px;
       align-items: center;
       padding: 15px 0;
       >div.col-2{
@@ -101,11 +103,12 @@ div.contact_container {
           font-size: 1.025rem;
         }
         >textarea{
-          padding-top: 10px;
-          height: 120px;
+          height: 150px;
+          resize: none;
         }
       }
       >button{
+        grid-column: span 3;
         background: rgb(var(--primary));
         color: rgb(var(--text-alt));
         text-transform: capitalize;

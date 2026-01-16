@@ -38,7 +38,7 @@ const {title, width} = Astro.props;
             if(!loaded) return;
             setTimeout(()=>{
                 window.scroll({top: Number(loaded), behavior: "smooth"});
-            }, 150);
+            }, 200);
         })
         document.addEventListener("scrollend", () => {
             localStorage.setItem("scrollTop", window.pageYOffset.toString());

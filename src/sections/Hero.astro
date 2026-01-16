@@ -17,9 +17,14 @@ const data = entry.data;
         <div class="figure">
             <EmailIcon/>
         </div>
-        <div>
-            <input placeholder={data.enter} type="email" />
-            <div class="btn">contact</div>
-        </div>
+        <form method="POST" id="justemail">
+            <label for="email" class=""></label>
+            <input id="email" required name="email" placeholder={data.enter} type="email" />
+            <button type="submit" class="btn">contact</button>
+        </form>
+        <script>
+            import setupForm from "@/services/contact_service.ts";
+            setupForm("justemail")
+        </script>
     </div>
 </section>

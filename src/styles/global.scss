@@ -27,7 +27,7 @@ main{
   gap: 40px;
 }
 main.full{
-  margin-top: 150px;
+  margin-top: 125px;
   max-width: 75%;
 }
 main.short{
@@ -42,7 +42,6 @@ a{
 
 .btn{
   cursor: pointer;
-  text-transform: capitalize;
   padding: 5px 20px;
   outline: none;
   font-weight: 500;
@@ -55,7 +54,7 @@ a{
   align-items: center;
   transition: color 300ms ease;
   &:hover{
-    background: rgb(var(--primary-hover));
+    background: rgb(var(--primary-hover)) !important;
     color: white;
   }
 }
