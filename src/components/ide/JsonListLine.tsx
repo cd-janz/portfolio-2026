@@ -8,7 +8,7 @@ export default function JsonListLine(props: Props) {
     return(
         <li class="document_line">
             <span class="document_line-index">{props.id}</span>
-            <div style={{"padding-left": `${props.tab*20}px`}} class="document_line-content iteration">
+            <div style={{"padding-left": `${props.tab*10}px`}} class="document_line-content iteration">
                 {props.values.map((value, index) =>(
                     <p class="noGap">
                         <span class="value">"{value}"</span>

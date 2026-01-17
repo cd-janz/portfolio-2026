@@ -1,0 +1,29 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import LocaleIcon from "@/assets/icons/system/LocaleIcon.astro";
+const locale = Astro.currentLocale!;
+const ref = Astro.originPathname;
+const path = getRelativeLocaleUrl(locale === "en" ? "es" : "", ref)
+---
+<a href={path} target="_self" class="locale">
+    <LocaleIcon/>
+</a>
+<style>
+    a.locale{
+        color: rgb(var(--text-disabled));
+        padding: 5px;
+        background: rgb(var(--border-disabled));
+        border: 1px solid rgb(var(--border));
+        border-radius: 18px;
+        cursor: pointer;
+        &:hover{
+            color: rgb(var(--border-hover));
+            border-color: rgb(var(--border-hover));
+            background: rgb(var(--border));
+        }
+        >svg{
+            width: 24px;
+            height: 24px;
+        }
+    }
+</style>

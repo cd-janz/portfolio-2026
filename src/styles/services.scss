@@ -1,10 +1,12 @@
 ul.services_container {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: stretch;
-  justify-content: space-evenly;
+  padding-left: 0;
+  gap: 20px;
   >li{
-    width: 32%;
+    width: 100%;
     border: 1px solid rgb(var(--border));
     padding: 20px;
     border-radius: 10px;
@@ -87,6 +89,45 @@ ul.services_container {
     }
     >p.service_description{
       font-weight: 300;
+    }
+  }
+}
+
+@media (max-width: 1535px){
+  ul.services_container{
+    >li{
+      gap: 10px;
+      >ol{
+        >li{
+          font-size: 0.875rem;
+        }
+      }
+      >div{
+        >div{
+          >figure{
+            min-width: 32px;
+            min-height: 32px;
+            >svg{
+              min-width: 20px;
+              min-height: 20px;
+              width: 20px;
+              height: 20px;
+            }
+          }
+          >h4{
+            font-size: 1.5rem;
+          }
+        }
+        >p{
+          font-size: 0.875rem;
+        }
+      }
+      >p.service_subtitle{
+        font-size: 0.975rem;
+      }
+      >p.service_description{
+        font-size: 0.95rem;
+      }
     }
   }
 }

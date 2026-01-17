@@ -95,3 +95,8 @@ div.ide-container {
     }
   }
 }
+@media (max-width: 1279px) {
+  div.ide-container{
+    display: none;
+  }
+}

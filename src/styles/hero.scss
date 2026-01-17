@@ -101,3 +101,24 @@ section{
     }
   }
 }
+@media (max-width: 1919px) {
+  .form-container{
+    width: 40%;
+  }
+}
+@media (max-width: 1535px){
+  .title-container{
+    >h1.title{
+      font-size: 4.75rem;
+      &:before{
+        width: 300px;
+      }
+    }
+    >h4.description{
+      font-size: 0.925rem;
+    }
+  }
+  .form-container{
+    width: 45%;
+  }
+}

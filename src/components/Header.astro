@@ -2,15 +2,29 @@
 import "../styles/header.scss"
 import Nav from "./Nav.astro"
 import {getEntry} from "astro:content";
+import Locale from "@/components/Locale.astro";
 const locale = Astro.currentLocale!;
 const entry = await getEntry("header", locale);
 if(!entry) return;
 const data = entry.data;
 ---
-<header>
+<header id="floating_header">
     <img src="/name.svg" alt="janz icon" />
     <Nav />
     <div class="header_right">
+        <Locale/>
         <a href={`${locale === "en" ? "" : "/".concat(locale)}/resume`} class="btn primary">{data.resume}</a>
     </div>
 </header>
+<script>
+    const element = document.getElementById("floating_header")
+    document.addEventListener("scroll", () => {
+        if(!element) return;
+        if(window.scrollY >= 150){
+            if(element.classList.contains("float")) return;
+            element.classList.add("float");
+        }else{
+            element.classList.remove("float")
+        }
+    })
+</script>

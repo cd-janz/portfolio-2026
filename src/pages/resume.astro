@@ -11,6 +11,7 @@ import WhatsappIcon from "@/assets/icons/system/WhatsappIcon.astro";
 import TelegramIcon from "@/assets/icons/system/TelegramIcon.astro";
 import ResumeItemsContainer from "@/components/resume/ResumeItemsContainer.astro";
 import type {Project, Timeline} from "@/content.config.ts";
+import Locale from "@/components/Locale.astro";
 const locale = Astro.currentLocale!;
 const [
     personEntry,
@@ -41,6 +42,7 @@ const description = locale === "en" ?
 <CoreLayout title="Quick Look Janz" width="short">
     <header class="quick_header">
         <button class="btn primary" id="back">come back</button>
+        <Locale/>
     </header>
     <div class="quick_profile-container">
         <div class="quick_profile">

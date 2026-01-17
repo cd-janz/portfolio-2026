@@ -116,3 +116,18 @@ div.about_container {
     }
   }
 }
+@media(max-width: 1535px){
+  div.about_container{
+    >div.about_profile{
+      font-size: 0.925rem;
+    }
+    >div.about_content{
+      >div.about_me{
+        gap: 5px;
+        >h3{
+          font-size: 1.75rem;
+        }
+      }
+    }
+  }
+}

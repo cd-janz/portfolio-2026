@@ -3,6 +3,7 @@ ul.projects_container{
   grid-template-columns:repeat(4, 1fr);
   gap: 10px;
   list-style: none;
+  padding-left: 0;
   >li.project_container{
     border: 1px solid rgb(var(--border-disabled));
     border-radius: 20px;
@@ -170,4 +171,24 @@ div.modal_overlay{
   font-size: 1.125rem;
   font-weight: 300;
   padding: 20px 0;
+}
+@media (max-width: 1919px) {
+  div.modal_overlay{
+    >div.modal_content{
+      width: 50%;
+    }
+  }
+  .project_md h4{
+    font-size: 1.025rem;
+  }
+  .project_md p {
+    font-size: 1.025rem;
+  }
+}
+@media (max-width: 1535px){
+  div.modal_overlay{
+    >div.modal_content{
+      height: 90%;
+    }
+  }
 }

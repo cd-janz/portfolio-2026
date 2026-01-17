@@ -59,3 +59,15 @@ div.document_container{
     }
   }
 }
+@media (max-width: 1535px) {
+  div.document_container{
+    >ul.document_body{
+      >li.document_line{
+        gap: 5px;
+        >.document_line-content{
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

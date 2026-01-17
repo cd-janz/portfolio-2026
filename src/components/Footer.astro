@@ -29,23 +29,20 @@ if(!info || !person) return Astro.redirect("404")
     </figure>
     <div class="footer_content-container">
         <div class="contact">
-            <div class="title">
-                <figure>
-                    <img src="/logo.svg" alt="janz icon" width="32"/>
-                </figure>
-                <h4>{person.data.first_name} {person.data.last_name}</h4>
-            </div>
-            <div class="content">
-                <a href={`mailto:${info.data.email}`}>{info.data.email}</a>
-                <span>{info.data.phone}</span>
-            </div>
+            <p>E-Mail: {info.data.email}</p>
+            <p>Phone: {info.data.phone}</p>
         </div>
         <div class="social">
-            <a target="_blank" href={info.data.telegram_link}><TelegramIcon/></a>
-            <a target="_blank" href={info.data.email}><EmailIcon/></a>
-            <a target="_blank" href={info.data.whatsapp_link}><WhatsappIcon/></a>
-            <a target="_blank" href={info.data.github_link}><GithubIcon/></a>
-            <a target="_blank" href={info.data.linkedin_link}><LinkedinIcon/></a>
+            <figure>
+                <img src="/logo.svg" alt="janz icon" width="32"/>
+            </figure>
+            <div>
+                <a target="_blank" href={info.data.telegram_link}><TelegramIcon/></a>
+                <a target="_blank" href={info.data.email}><EmailIcon/></a>
+                <a target="_blank" href={info.data.whatsapp_link}><WhatsappIcon/></a>
+                <a target="_blank" href={info.data.github_link}><GithubIcon/></a>
+                <a target="_blank" href={info.data.linkedin_link}><LinkedinIcon/></a>
+            </div>
         </div>
         <div class="sitemap">
             <h3>sitemap</h3>
@@ -60,5 +57,5 @@ if(!info || !person) return Astro.redirect("404")
     </div>
 </footer>
 <div class="cc">
-    <p>&copy; {currentYear} Juan C. Zuñiga. All rights reserved.</p>
+    <p>&copy; {currentYear} Juan C. Zuñiga. Built with Astro. All rights reserved.</p>
 </div>

@@ -44,17 +44,18 @@ a{
 
 .btn{
   cursor: pointer;
-  padding: 5px 20px;
+  padding: 10px 20px;
   outline: none;
   font-weight: 500;
-  border-radius: 15px;
-  height: 100%;
+  border-radius: 20px;
   background: rgb(var(--bg));
   border: 1px solid rgb(var(--border));
   color: rgb(var(--text));
   display: flex;
   align-items: center;
   transition: color 300ms ease;
+  box-sizing: border-box;
+  text-wrap: nowrap;
   &:hover{
     background: rgb(var(--primary-hover)) !important;
     color: white;
@@ -70,5 +71,23 @@ a{
   }
   &:active{
     background: rgb(var(--primary-focus));
+  }
+}
+
+@media (max-width: 1919px) {
+  html{
+    --page-small-width: 50%
+  }
+  .btn{
+    padding: 7px 18px;
+  }
+}
+@media (max-width: 1535px) {
+  html{
+    --page-width: 85%;
+    --page-small-width: 60%
+  }
+  main.full{
+    margin-top: 60px;
   }
 }
