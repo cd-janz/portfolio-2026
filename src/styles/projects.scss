@@ -186,6 +186,25 @@ div.modal_overlay{
   }
 }
 @media (max-width: 1535px){
+  ul.projects_container{
+    >li.project_container{
+      >picture{
+        >h3{
+          font-size: 2.75rem;
+        }
+      }
+      >div.project_body{
+        >h5{
+          font-size: 1.5rem;
+        }
+        >ul{
+          >li{
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+  }
   div.modal_overlay{
     >div.modal_content{
       height: 90%;

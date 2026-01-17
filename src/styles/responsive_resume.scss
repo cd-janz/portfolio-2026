@@ -1,0 +1,48 @@
+@use "resume";
+@media (max-width: 1535px) {
+  div.quick_profile-container{
+    >div.quick_profile{
+      >h4{
+        font-size: 3rem;
+      }
+      >h5{
+        font-size: 1.25rem;
+      }
+      >p{
+        font-size: 0.95rem;
+      }
+    }
+    >div.resume_item-container{
+      >h5{
+        font-size: 1.125rem;
+      }
+      >div.resume_item-content.list >div.resume_item-list > div.resume_item-list--item{
+        >h4{
+          font-size: 0.95rem;
+        }
+        >p{
+          font-size: 0.925rem;
+        }
+        >ul > li{
+          font-size: 0.85rem;
+          padding: 3px 0;
+        }
+      }
+      >div.resume_item-content.grid{
+        >div.resume_item-grid{
+          >picture{
+            >h3{
+              font-size: 1.5rem;
+            }
+          }
+          >div.project_body > h5{
+            font-size: 1.5rem;
+          }
+          >div.project_body > ul > li{
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+}

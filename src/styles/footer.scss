@@ -9,6 +9,7 @@ footer{
   position: relative;
   overflow: hidden;
   >div.footer_content-container{
+    z-index: 2;
     width: var(--page-width);
     height: 100%;
     display: grid;
@@ -101,4 +102,35 @@ div.cc{
   align-items: center;
   justify-content: center;
   font-weight: 300;
+}
+
+@media (max-width: 1535px) {
+  footer{
+    >div.footer_content-container{
+      >.sitemap{
+        font-size: 0.9rem;
+      }
+      >.contact{
+        font-size: 0.9rem;
+      }
+      >.social{
+        >figure{
+          >img{
+            width: 24px;
+          }
+        }
+        >div > a{
+          padding: 4px;
+          >svg{
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+  div.cc{
+    padding: 15px 0;
+    font-size: 0.95rem;
+  }
 }

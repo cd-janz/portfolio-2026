@@ -10,8 +10,8 @@ li.timeline_item{
   height: 100%;
   gap: 10px;
   >div.left{
-      text-transform: capitalize;
-      display: flex;
+    text-transform: capitalize;
+    display: flex;
       flex-direction: column;
       align-items: end;
       justify-content: flex-start;
@@ -25,8 +25,8 @@ li.timeline_item{
         font-size: 1.025rem;
       }
     }
-    >div.right{
-      display: flex;
+  >div.right{
+    display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
@@ -36,6 +36,7 @@ li.timeline_item{
       >div.title{
         text-transform: capitalize;
         font-family: "Teko", sans-serif;
+        font-size: 1.5rem;
         >a{
           cursor: pointer;
           &:hover{
@@ -46,7 +47,6 @@ li.timeline_item{
           align-items: center;
           gap: 5px;
           >h4{
-            font-size: 1.5rem;
             font-weight: 300;
             line-height: 1;
           }
@@ -59,7 +59,6 @@ li.timeline_item{
         align-items: center;
         gap: 4px;
         >h4{
-          font-size: 1.5rem;
           font-weight: 400;
           line-height: 1;
         }
@@ -94,6 +93,9 @@ div.body{
     padding-left: 0;
     font-weight: 600;
   }
+  >ul{
+    font-size: 0.975rem;
+  }
   >ul.grid{
     width: 100%;
     list-style: none;
@@ -110,7 +112,6 @@ div.body{
       border: 1px solid rgb(var(--border)/0.5);
       border-radius: 8px;
       font-weight: 300;
-      font-size: 0.975rem;
     }
   }
   ul.list{
@@ -133,10 +134,43 @@ button.handler{
     background-color: rgb(var(--text));
     color: rgb(var(--surface));
   }
+  &:focus{
+    outline: none;
+  }
 }
 div.dropdown {
   overflow: hidden;
   width: 100%;
   transition: height 0.3s ease-out;
   height: 0;
+}
+@media(max-width: 1535px){
+  li.timeline_item{
+    >div.left{
+      >p.dates{
+        font-size: 1rem;
+      }
+      >p.difference{
+        font-size: 0.975rem;
+      }
+    }
+    >div.right{
+      gap: 5px;
+      >div.title{
+        font-size: 1.35rem;
+      }
+      >p.subtitle{
+        font-size: 1rem;
+      }
+    }
+  }
+  div.body{
+    font-size: 0.975rem;
+    >ul{
+      font-size: 0.875rem;
+    }
+    >ul.grid{
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
 }

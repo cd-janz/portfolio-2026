@@ -34,7 +34,6 @@ div.contact_container {
       flex-direction: column;
       gap: 10px;
       align-items: flex-start;
-      padding-left: 10px;
       >a.social_link{
         &:hover{
           text-decoration: underline;
@@ -120,6 +119,45 @@ div.contact_container {
         cursor: pointer;
         &:hover{
           background: rgb(var(--primary-hover));
+        }
+      }
+    }
+  }
+}
+@media(max-width: 1535px){
+  div.contact_container {
+    > div {
+      > div.title {
+        > h4 {
+          font-size: 2rem;
+        }
+        > p {
+          font-size: 0.975rem;
+        }
+      }
+    }
+    >div.left{
+      >div.social_media{
+        >.social_link{
+          gap: 5px;
+          >p{
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+    >div.right{
+      >form{
+        >div.contact_input{
+          >label{
+            font-size: 0.825rem;
+          }
+          >input {
+            height: 35px;
+          }
+          >textarea{
+            height: 100px;
+          }
         }
       }
     }
