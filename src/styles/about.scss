@@ -37,6 +37,7 @@ div.about_container {
       gap: 5px;
       font-weight: 300;
       >figure{
+        color: rgb(var(--text-disabled));
         >svg{
           width: 18px;
           height: 18px;
@@ -126,6 +127,37 @@ div.about_container {
         gap: 5px;
         >h3{
           font-size: 1.75rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1279px) {
+  div.about_container{
+    >div.about_profile{
+      >div.about_location{
+        flex-direction: column;
+        gap: 5px;
+        >figure{
+          order: 3;
+          >svg{
+            width: 22px;
+            height: 22px;
+          }
+        }
+        >span.dash{
+          display: none;
+        }
+      }
+    }
+    >div.about_content{
+      >div.about_me{
+        gap: 5px;
+        >h3{
+          font-size: 1.5rem;
+        }
+        >p{
+          font-size: 0.925rem;
         }
       }
     }

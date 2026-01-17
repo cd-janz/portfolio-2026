@@ -163,3 +163,8 @@ div.contact_container {
     }
   }
 }
+@media (max-width: 1279px) {
+  div.contact_container{
+    grid-template-columns: 2fr 4fr;
+  }
+}

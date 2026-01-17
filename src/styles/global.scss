@@ -88,6 +88,12 @@ a{
     --page-small-width: 60%
   }
   main.full{
-    margin-top: 60px;
+    margin-top: 130px;
+  }
+}
+@media (max-width: 1279px) {
+  html{
+    --page-width: 95%;
+    --page-small-width: 80%;
   }
 }
