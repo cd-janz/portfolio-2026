@@ -134,3 +134,11 @@ div.cc{
     font-size: 0.95rem;
   }
 }
+@media (max-width: 1023px) {
+  footer{
+    >div.footer_content-container{
+      padding: 10px 20px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

@@ -100,3 +100,12 @@ header{
     left: 19%;
   }
 }
+@media (max-width: 1024px) {
+  header{
+    padding: 0 20px;
+  }
+  header.float{
+    left: 5%;
+    width: 90%;
+  }
+}

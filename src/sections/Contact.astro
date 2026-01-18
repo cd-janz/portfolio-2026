@@ -45,7 +45,7 @@ if(!system || !person) return Astro.redirect("/404")
             <form method="POST" id="contact">
                 <ContactInput id="name" label="name" required />
                 <ContactInput id="email" label="email" required />
-                <ContactInput id="phone" label="phone"/>
+                <ContactInput id="phone" label="phone" cols="col-may" }/>
                 <ContactInput id="subject" label="subject" cols="col-3" required />
                 <ContactTextArea id="message" label="message" cols="col-3" />
                 <ContactSubmit label="submit"/>

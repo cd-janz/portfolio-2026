@@ -122,3 +122,14 @@ section{
     width: 45%;
   }
 }
+@media (max-width: 1023px) {
+  .title-container{
+    width: 100%;
+    >h1.title{
+      font-size: 4.25rem;
+    }
+  }
+  .form-container{
+    width: 80%;
+  }
+}

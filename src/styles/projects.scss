@@ -219,3 +219,13 @@ div.modal_overlay{
     width: 80%;
   }
 }
+@media (max-width: 1023px) {
+    ul.projects_container{
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 767px) {
+  ul.projects_container{
+    grid-template-columns: 1fr;
+  }
+}

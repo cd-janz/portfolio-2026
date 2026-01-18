@@ -163,3 +163,53 @@ div.about_container {
     }
   }
 }
+@media (max-width: 1023px) {
+  div.about_container{
+    grid-template-columns: 1fr;
+    border: none;
+    >figure{
+      display: none;
+    }
+    >div.about_profile {
+      >div.about_location{
+        flex-direction: row;
+        gap: 10px;
+        font-size: 1rem;
+        >figure{
+          order: 0;
+        }
+        >span.dash{
+          display: flex;
+        }
+      }
+      >div.about_title{
+        >h3{
+          font-size: 2rem;
+        }
+        >h4{
+          font-size: 1.25rem;
+        }
+      }
+      >img{
+        width: 30%;
+      }
+      >div.about_languages{
+        font-size: 1rem;
+      }
+    }
+    >div.about_content{
+      border: 1px solid rgb(var(--border));
+      border-radius: 15px;
+      >div.about_links{
+        flex-wrap: wrap;
+        >a >p {
+          font-size: 0.975rem;
+        }
+        >a >figure >svg{
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

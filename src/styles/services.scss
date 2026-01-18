@@ -134,3 +134,13 @@ ul.services_container {
     }
   }
 }
+@media (max-width: 1023px) {
+  ul.services_container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  ul.services_container {
+    grid-template-columns: 1fr;
+  }
+}

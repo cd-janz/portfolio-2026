@@ -105,6 +105,7 @@ div.contact_container {
           padding-top: 10px;
           height: 150px;
           resize: none;
+          grid-column: span 3;
         }
       }
       >button{
@@ -166,5 +167,27 @@ div.contact_container {
 @media (max-width: 1279px) {
   div.contact_container{
     grid-template-columns: 2fr 4fr;
+  }
+}
+@media (max-width: 1023px) {
+  div.contact_container{
+    grid-template-columns: 3fr 5fr;
+    >div.right{
+      >form{
+        grid-template-columns: 1fr 1fr;
+        >div.col-2{
+          grid-column: span 1;
+        }
+        >div.col-3{
+          grid-column: span 2;
+        }
+        >div.col-may{
+          grid-column: span 2;
+        }
+        >button {
+          grid-column: span 2;
+        }
+      }
+    }
   }
 }

@@ -21,7 +21,7 @@ const items = await getTimelineInfo([...education, ...courses, ...experience])
 const props = Astro.props;
 ---
 <SectionLayout id="career" title={props.title} section={props.name} left={80} width={105}>
-    <ul style="list-style: none; display: flex; flex-direction: column; height: fit-content; width: 100%;">
+    <ul style="list-style: none; display: flex; flex-direction: column; height: fit-content; width: 100%;padding-left: 0">
         {items.map(item => (
             <TimelineItem client:only data={item} locale={locale} />
         ))}
