@@ -109,3 +109,8 @@ a{
     margin-top: 10px;
   }
 }
+@media (max-width: 767px) {
+  main.full{
+    margin-top: 0;
+  }
+}

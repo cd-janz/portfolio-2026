@@ -133,3 +133,8 @@ section{
     width: 80%;
   }
 }
+@media (max-width: 767px) {
+  section{
+    padding-top: 40px;
+  }
+}

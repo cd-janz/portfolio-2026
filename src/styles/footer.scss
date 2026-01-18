@@ -142,3 +142,10 @@ div.cc{
     }
   }
 }
+@media (max-width: 767px) {
+  footer{
+    >div.footer_content-container{
+      grid-template-columns: 1fr 1fr 60px;
+    }
+  }
+}

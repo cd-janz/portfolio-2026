@@ -109,3 +109,8 @@ header{
     width: 90%;
   }
 }
+@media (max-width: 767px) {
+  header{
+    display: none;
+  }
+}
