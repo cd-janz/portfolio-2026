@@ -111,7 +111,7 @@ div.modal_overlay{
       >p{
         text-align: start;
         font-size: 1.125rem;
-        font-weight: 400;
+        font-weight: 300;
       }
       >.modal_items{
         display: flex;
@@ -223,4 +223,60 @@ div.modal_overlay{
     ul.projects_container{
       grid-template-columns: repeat(2, 1fr);
     }
+}
+@media (max-width: 639px) {
+  ul.projects_container{
+    grid-template-columns: 1fr;
+  }
+  div.modal_overlay > div.modal_content{
+    width: 90%;
+    height: 85%;
+    border-radius: 12px;
+    >picture{
+      height: 250px;
+      >h3{
+        font-size: 2.75rem;
+      }
+    }
+    >div.modal_body{
+      padding: 15px;
+      >h5{
+        font-size: 1.5rem;
+      }
+      >p{
+        font-size: 0.925rem;
+      }
+      >.modal_items > div {
+        > svg {
+          width: 20px;
+          height: 20px;
+        }
+        > p {
+          font-size: 1rem;
+        }
+      }
+      >div.tech{
+        >h5{
+          font-size: 1rem;
+        }
+        >ul{
+          padding-left: 0;
+          gap: 5px;
+          >li{
+            font-size: 0.925rem;
+            font-weight: 300;
+            padding: 2px 15px;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+  .project_md h4{
+    font-size: 1rem;
+  }
+  .project_md p{
+    font-size: 0.925rem;
+    padding: 10px 0;
+  }
 }

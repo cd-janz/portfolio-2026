@@ -64,3 +64,15 @@
     }
   }
 }
+@media (max-width: 639px){
+  div.quick_profile-container > div.resume_item-container{
+    >div.resume_item-content.list > div.resume_item-list > div.resume_item-list--item{
+      >ul{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    >div.resume_item-content.grid{
+      grid-template-columns: 1fr;
+    }
+  }
+}

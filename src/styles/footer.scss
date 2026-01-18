@@ -149,3 +149,30 @@ div.cc{
     }
   }
 }
+@media (max-width: 639px) {
+  footer{
+    >div.footer_content-container{
+      padding-top: 20px;
+      >.contact{
+        display: none;
+      }
+      >.sitemap{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 5px;
+        width: 100%;
+        justify-items: flex-start;
+        >h3.title{
+          text-align: start;
+          grid-column: span 3;
+        }
+      }
+      grid-template-columns: 1fr;
+    }
+  }
+  div.cc{
+    font-size: 0.875rem;
+    text-align: center;
+  }
+}

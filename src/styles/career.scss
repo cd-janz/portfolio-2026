@@ -9,20 +9,17 @@ li.timeline_item{
   height: 100%;
   gap: 10px;
   >div.left{
+    font-family: "Jost", sans-serif;
     text-transform: capitalize;
     display: flex;
       flex-direction: column;
       align-items: end;
       justify-content: flex-start;
       padding: 0 10px;
-      >p.dates{
+      font-size: 1.15rem;
+      >p{
         padding-top: 5px;
         font-weight: 600;
-        font-size: 1.15rem;
-      }
-      >p.difference{
-        font-family: "Jost", sans-serif;
-        font-size: 1.025rem;
       }
     }
   >div.right{
@@ -147,12 +144,7 @@ div.dropdown {
 @media(max-width: 1535px){
   li.timeline_item{
     >div.left{
-      >p.dates{
-        font-size: 1rem;
-      }
-      >p.difference{
-        font-size: 0.975rem;
-      }
+      font-size: 1rem;
     }
     >div.right{
       gap: 5px;
@@ -198,5 +190,30 @@ div.dropdown {
     >ul.grid{
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+}
+@media (max-width: 639px) {
+  li.timeline_item{
+    grid-template-columns: 1fr;
+    gap: 0;
+    >div.left{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 6px 0;
+      gap: 10px;
+      font-size: 0.925rem;
+      >p{
+        font-weight: 400;
+      }
+    }
+    >div.right{
+      >div.title{
+        font-size: 1.25rem;
+      }
+    }
+  }
+  div.body{
+    padding-bottom: 5px;
   }
 }

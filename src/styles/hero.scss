@@ -138,3 +138,20 @@ section{
     padding-top: 40px;
   }
 }
+@media(max-width: 639px){
+  .title-container{
+    >h1.title{
+      font-size: 3.5rem;
+      &:before{
+        width: 240px;
+        height: 15px;
+      }
+    }
+    >h4.description{
+      white-space: wrap;
+    }
+  }
+  .form-container{
+    width: 100%;
+  }
+}

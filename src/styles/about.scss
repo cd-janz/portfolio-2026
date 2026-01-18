@@ -213,3 +213,29 @@ div.about_container {
     }
   }
 }
+@media (max-width: 639px) {
+  div.about_container{
+    >div{
+      padding: 5px;
+    }
+    >div.about_profile{
+      >div.about_title{
+        >h3{
+          font-size: 1.75rem;
+        }
+      }
+      >div.about_languages{
+        font-size: 0.825rem;
+      }
+      >div.about_location{
+        font-size: 0.875rem;
+      }
+      >img{
+        width: 60%;
+      }
+    }
+    >div.about_content{
+      padding: 10px 15px;
+    }
+  }
+}

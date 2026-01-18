@@ -191,3 +191,26 @@ div.contact_container {
     }
   }
 }
+@media (max-width: 639px) {
+  div.contact_container{
+    grid-template-columns: 1fr;
+    >div.left{
+      border-right: 0;
+      border-bottom: 1px solid rgb(var(--border));
+    }
+    >div.right{
+      >form{
+        grid-template-columns: 1fr;
+        >div.col-3{
+          grid-column: span 1;
+        }
+        >div.col-may{
+          grid-column: span 1;
+        }
+        >button {
+          grid-column: span 1;
+        }
+      }
+    }
+  }
+}

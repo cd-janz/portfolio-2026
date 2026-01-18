@@ -139,3 +139,8 @@ ul.services_container {
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 639px) {
+  ul.services_container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -53,3 +53,14 @@ section{
     }
   }
 }
+@media (max-width: 639px) {
+  section{
+    >div.section_title > h4{
+      font-size: 0.875rem;
+    }
+    >div > h3{
+      font-size: 1.75rem;
+      text-align: center;
+    }
+  }
+}
