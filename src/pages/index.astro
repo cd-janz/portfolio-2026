@@ -9,6 +9,7 @@ import Projects from "@/sections/Projects.astro";
 import Career from "@/sections/Career.astro";
 import type {Timeline} from "@/content.config.ts";
 import Contact from "@/sections/Contact.astro";
+import MobileHeader from "@/components/MobileHeader.astro";
 const locale = Astro.currentLocale!;
 const [
     ideSystemEntry,
@@ -31,6 +32,7 @@ const education: Timeline[] = educationEntries.map(entry => entry.data);
 const sections = sectionsEntry.data;
 ---
 <CoreLayout title="Janz Zuniga">
+    <MobileHeader/>
     <Hero/>
     <Ide client:only system={ideSystemEntry.data} explorer={ideEntry.data} experience={experience}
         education={education} nav={ideNavEntry.data}/>

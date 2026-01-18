@@ -162,8 +162,9 @@ div.cc{
         column-gap: 10px;
         row-gap: 5px;
         width: 100%;
-        justify-items: flex-start;
+        justify-items: center;
         >h3.title{
+          width: 100%;
           text-align: start;
           grid-column: span 3;
         }

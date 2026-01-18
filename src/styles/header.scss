@@ -1,4 +1,4 @@
-header.float{
+header.desktop.float{
   width: 50%;
   padding: 5px 5px 5px 30px;
   top: 10px;
@@ -20,7 +20,7 @@ header.float{
     }
   }
 }
-header{
+header.desktop{
   box-sizing: border-box;
   margin: 0;
   position: fixed;
@@ -70,7 +70,7 @@ header{
   }
 }
 @media (max-width: 1919px) {
-  header{
+  header.desktop{
     height: 50px;
     >nav{
       >a{
@@ -81,13 +81,13 @@ header{
 }
 
 @media (max-width: 1535px) {
-  header.float{
+  header.desktop.float{
     grid-template-columns: 1fr 2fr 2fr;
     >img{
       width: 70px;
     }
   }
-  header{
+  header.desktop{
     font-size: 0.95rem;
     >img{
       width: 80px;
@@ -95,22 +95,22 @@ header{
   }
 }
 @media (max-width: 1279px) {
-  header.float{
+  header.desktop.float{
     width: 62%;
     left: 19%;
   }
 }
 @media (max-width: 1024px) {
-  header{
+  header.desktop{
     padding: 0 20px;
   }
-  header.float{
+  header.desktop.float{
     left: 5%;
     width: 90%;
   }
 }
 @media (max-width: 767px) {
-  header{
+  header.desktop{
     display: none;
   }
 }

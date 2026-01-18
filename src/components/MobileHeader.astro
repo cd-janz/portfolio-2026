@@ -1,0 +1,51 @@
+---
+import {getEntry} from "astro:content";
+import {getRelativeLocaleUrl} from "astro:i18n";
+import Locale from "@/components/Locale.astro";
+const locale = Astro.currentLocale!;
+const entry = await getEntry("header", locale);
+if(!entry) return;
+const data = entry.data;
+const url = getRelativeLocaleUrl(locale === "en" ? "es" : "", "/resume")
+---
+<header class="mobile">
+    <figure>
+        <img src="/logo.svg" alt="short janz logo" />
+    </figure>
+    <div>
+        <Locale/>
+        <a href={`${locale === "en" ? "" : "/".concat(locale)}/resume`} class="btn primary">{data.resume}</a>
+    </div>
+</header>
+<style>
+    header.mobile{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid rgb(var(--border));
+        padding: 0 15px;
+        background: rgb(var(--bg)/0.6);
+        backdrop-filter: blur(5px);
+        align-items: center;
+        justify-content: space-between;
+        >figure{
+            >img{
+                width: 22px;
+            }
+        }
+        >div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    @media (max-width: 767px) {
+        header.mobile{
+            display: flex;
+        }
+    }
+</style>

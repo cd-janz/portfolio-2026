@@ -47,6 +47,12 @@
   }
 }
 @media (max-width: 767px){
+  header.quick_header{
+    padding: 0 10px;
+    background: rgb(var(--bg)/0.6);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+  }
   div.quick_profile-container{
     >div.resume_item-container{
       >div.resume_item-content.list{
