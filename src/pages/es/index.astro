@@ -1,0 +1,45 @@
+---
+import CoreLayout from "@/layouts/CoreLayout.astro"
+import Hero from "@/sections/Hero.astro";
+import Ide from "@/sections/IDE.tsx";
+import {getCollection, getEntry} from "astro:content";
+import About from "@/sections/About.astro";
+import Services from "@/sections/Services.astro";
+import Projects from "@/sections/Projects.astro";
+import Career from "@/sections/Career.astro";
+import type {Timeline} from "@/content.config.ts";
+import Contact from "@/sections/Contact.astro";
+import MobileHeader from "@/components/MobileHeader.astro";
+const locale = Astro.currentLocale!;
+const [
+    ideSystemEntry,
+    ideEntry,
+    ideNavEntry,
+    sectionsEntry,
+    experienceEntries,
+    educationEntries
+] = await Promise.all([
+    getEntry("ideSystem", locale),
+    getEntry("ide", locale),
+    getEntry("ideNav", locale),
+    getEntry("sections", locale),
+    getCollection("experience", ({ id }) => id.startsWith(locale)),
+    getCollection("education", ({ id }) => id.startsWith(locale))
+]);
+console.log("locale: ", locale)
+if (!ideSystemEntry || !ideEntry || !ideNavEntry || !sectionsEntry) return Astro.redirect("/404");
+const experience: Timeline[] = experienceEntries.map(entry => entry.data);
+const education: Timeline[] = educationEntries.map(entry => entry.data);
+const sections = sectionsEntry.data;
+---
+<CoreLayout title="Janz Zuniga">
+    <MobileHeader/>
+    <Hero/>
+    <Ide client:only system={ideSystemEntry.data} explorer={ideEntry.data} experience={experience}
+         education={education} nav={ideNavEntry.data}/>
+    <About name={sections.about} title={sections.title_about} />
+    <Services name={sections.services} title={sections.title_services} />
+    <Career name={sections.career} title={sections.title_career}/>
+    <Projects name={sections.projects} title={sections.title_projects} />
+    <Contact name={sections.contact} title={sections.title_contact} />
+</CoreLayout>

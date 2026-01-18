@@ -11,7 +11,7 @@ export default defineConfig({
   adapter: vercel(),
   i18n: {
     defaultLocale: 'en',
-    locales: ["es", "en"],
+    locales: ["en", "es"],
     routing: {
       fallbackType: "redirect",
       redirectToDefaultLocale: true

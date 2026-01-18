@@ -1,0 +1,23 @@
+{
+  "title": "unimag",
+  "institution": "Universidad del Magdalena",
+  "position_program": "Ingeniería de Sistemas",
+  "attendance_mode": "Presencial",
+  "location": "Santa Marta, Colombia",
+  "summary": "Formación fundamental en ingeniería centrada en la intersección entre la lógica de sistemas y la arquitectura empresarial. Este periodo fue el catalizador para dominar los principios de clean code y la integración full-stack, vinculando el rigor académico con tecnologías modernas de alto rendimiento para desarrollar soluciones escalables y listas para producción.",
+  "start": "08/2019",
+  "projects": [
+    "Plataforma Social Universitaria",
+    "Gestor de Vuelos basado en Microservicios",
+    "Suite de E-Commerce"
+  ],
+  "technologies": [
+    "React.js", "Spring Boot", "Next.js",
+    "SCSS", "Docker"
+  ],
+  "status": "pausado temporalmente",
+  "related": [
+    "Bootcamp de IEEE en Oracle Apex"
+  ],
+  "path": "https://www.unimagdalena.edu.co/"
+}

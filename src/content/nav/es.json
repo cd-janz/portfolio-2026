@@ -1,0 +1,6 @@
+[
+  { "label": "inicio", "path": "#home" },
+  { "label": "trayectoria", "path": "#career" },
+  { "label": "proyectos", "path": "#projects" },
+  { "label": "contacto", "path": "#contact" }
+]

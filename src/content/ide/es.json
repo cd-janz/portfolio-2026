@@ -1,0 +1,16 @@
+{
+  "title": "Portafolio",
+  "experience": {
+    "title": "experiencia",
+    "items": [
+      "freelancer.json",
+      "IGD_SAS.json"
+    ]
+  },
+  "education": {
+    "title": "educación",
+    "items": [
+      "unimag.json"
+    ]
+  }
+}

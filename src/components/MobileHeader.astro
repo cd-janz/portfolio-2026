@@ -1,12 +1,10 @@
 ---
 import {getEntry} from "astro:content";
-import {getRelativeLocaleUrl} from "astro:i18n";
 import Locale from "@/components/Locale.astro";
 const locale = Astro.currentLocale!;
 const entry = await getEntry("header", locale);
 if(!entry) return;
 const data = entry.data;
-const url = getRelativeLocaleUrl(locale === "en" ? "es" : "", "/resume")
 ---
 <header class="mobile">
     <figure>
@@ -14,7 +12,7 @@ const url = getRelativeLocaleUrl(locale === "en" ? "es" : "", "/resume")
     </figure>
     <div>
         <Locale/>
-        <a href={`${locale === "en" ? "" : "/".concat(locale)}/resume`} class="btn primary">{data.resume}</a>
+        <a href={`${locale === "en" ? "" : "".concat(locale)}/resume`} class="btn primary">{data.resume}</a>
     </div>
 </header>
 <style>

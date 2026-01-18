@@ -1,0 +1,31 @@
+{
+  "title": "Freelance",
+  "institution": "Independiente",
+  "position_program": "Full-stack Developer",
+  "attendance_mode": "Remoto",
+  "location": "Santa Marta, Colombia",
+  "summary": "Gestión de ciclos completos de desarrollo para aplicaciones multiplataforma, garantizando una integración fluida entre la lógica compleja de backend y los entornos de cara al usuario (frontend).",
+  "start": "04/2025",
+  "responsibilities": [
+    "Diseño",
+    "Gestión de Proyectos",
+    "Desarrollo",
+    "Aseguramiento de Calidad (QA)",
+    "Despliegue",
+    "Mantenimiento"
+  ],
+  "projects": [
+    "Aplicación Móvil de Entrenamiento Atlético y Blog",
+    "Plataforma de Gestión y Programación de Reciclaje Industrial",
+    "Optimización de Rendimiento Web Empresarial y Rediseño",
+    "MVP de Gestión de Reservas y Booking Hotelero",
+    "MVP de Gestión de Logística y Distribución de Inventarios"
+  ],
+  "technologies": [
+    "React Native", "Expo", "React", "Next",
+    "Angular", "Redux", "Nest", "Astro", "Spring Boot",
+    "ASP.NET Core"
+  ],
+  "related": ["IGD S.A.S"],
+  "status": "Activo"
+}

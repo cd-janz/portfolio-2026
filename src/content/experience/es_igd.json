@@ -1,0 +1,36 @@
+{
+  "title": "igd",
+  "institution": "IGD S.A.S",
+  "position_program": "Desarrollador Full-stack Semi-Senior",
+  "attendance_mode": "Remoto",
+  "location": "Barranquilla, Colombia",
+  "summary": "Lideré el desarrollo y la migración de plataformas SaaS de nivel empresarial para los sectores fintech y contable. Diseñé arquitecturas de backend escalables utilizando Nest.js y ASP.NET Core, entregando soluciones de frontend de alto rendimiento con Next.js y Astro.",
+  "start": "01/01/2021",
+  "end": "28/02/2025",
+  "responsibilities": [
+    "Diseño",
+    "Desarrollo",
+    "Aseguramiento de Calidad (QA)",
+    "Despliegue",
+    "Mantenimiento"
+  ],
+  "achievements": [
+    "Optimicé la escalabilidad y concurrencia del sistema central, reduciendo la latencia en un 17% en plataformas de misión crítica.",
+    "Lideré la modernización de sistemas legacy y la reducción de deuda técnica, aumentando la productividad del equipo en un 12% y disminuyendo los incidentes.",
+    "Diseñé estándares de ingeniería y patrones de diseño para mejorar la consistencia y el mantenimiento de la plataforma.",
+    "Desarrollé modelos de datos y flujos de trabajo de alto rendimiento utilizando SQL/NoSQL, incrementando significativamente la capacidad de procesamiento (throughput) del sistema.",
+    "Encabecé iniciativas estratégicas full-stack como líder técnico, alineando las soluciones de ingeniería con los objetivos de negocio."
+  ],
+  "projects": [
+    "Aplicación web para la gestión de transacciones con criptomonedas.",
+    "Migración y actualización del SaaS principal.",
+    "SaaS contable y financiero.",
+    "SaaS de gestión de créditos."
+  ],
+  "technologies": [
+    "React", "Next", "Tailwind", "SCSS", "Angular", "Astro", "ASP.NET Core",
+    "Spring Boot", "Nest", "Docker"
+  ],
+  "status": "Trabajo independiente / Freelance",
+  "path": "https://igdsas.com/"
+}

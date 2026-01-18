@@ -1,0 +1,26 @@
+[
+  {
+    "key": "front",
+    "name": "Frontend",
+    "subtitle": "Píxeles con Propósito",
+    "skills": ["React", "Angular", "Next.js", "Astro", "SolidJS"],
+    "experience": "4+ años",
+    "description": "Interfaces de usuario arquitectónicamente sólidas y escalables."
+  },
+  {
+    "key": "back",
+    "name": "Backend",
+    "subtitle": "El Motor de la Innovación",
+    "skills": ["Spring Boot", "ASP.NET Core", "NestJS"],
+    "experience": "4+ años",
+    "description": "Arquitecturas de servidor impulsadas por la lógica y el alto rendimiento."
+  },
+  {
+    "key": "mob",
+    "name": "Mobile",
+    "subtitle": "Fluidez en cada Mano",
+    "skills": ["React Native", "Flutter"],
+    "experience": "2+ años",
+    "description": "Soluciones multiplataforma eficientes y de alta fidelidad."
+  }
+]
