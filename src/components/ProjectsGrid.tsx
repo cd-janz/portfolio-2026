@@ -1,48 +1,51 @@
-import type {Project} from "@/content.config.ts";
-import "@/styles/projects.scss"
-import {children, createSignal, Show} from "solid-js";
+import type { Project } from "@/content.config.ts";
+import "@/styles/projects.scss";
+import { createSignal, Show, onMount } from "solid-js";
 import AwardIslandIcon from "@/assets/icons/system/AwardIslandIcon.tsx";
 import GroupIslandIcon from "@/assets/icons/system/GroupIslandIcon.tsx";
 import CalendarIslandIcon from "@/assets/icons/system/CalendarIslandIcon.tsx";
 
-const regex = /data-id="([^"]*)"/;
-interface IProject{
+interface IProject {
     id: string;
-    data: Project
+    data: Project;
 }
-interface Props{
-    projects: IProject[]
+interface Props {
+    projects: IProject[];
     children?: any;
 }
+
 export default function ProjectsGrid(props: Props) {
-    const [active, setActive] = createSignal<IProject|null>(null);
-    const resolvedChildren = children(() => props.children);
+    const [active, setActive] = createSignal<IProject | null>(null);
+
+    let contentVaultRef: HTMLDivElement | undefined;
+
     const getActiveContent = () => {
         const currentActive = active();
-        if (!currentActive) return null;
-        const nodes = resolvedChildren.toArray() as HTMLElement[];
-        const matchingNode = nodes.find(node => {
-            if (node.getAttribute('data-id') === currentActive.id) {
-                return true;
-            }
-            return !!node.querySelector(`[data-id="${currentActive.id}"]`);
 
-        });
-        if (matchingNode) {
-            matchingNode.style.display = 'block';
+        if (!currentActive || !contentVaultRef) return null;
+        const originalNode = contentVaultRef.querySelector(`[data-id="${currentActive.id}"]`);
+
+        if (originalNode) {
+            return originalNode.cloneNode(true) as HTMLElement;
         }
-        return matchingNode || null;
+
+        return null;
     };
-    return(
+
+    return (
         <>
+            <div style={{ display: "none" }} ref={contentVaultRef}>
+                {props.children}
+            </div>
+
             <ul class="projects_container">
                 {props.projects
                     .sort((a, b) => b.data.name.localeCompare(a.data.name))
-                    .map(project => (
+                    .map((project) => (
                         <li class="project_container" onClick={() => setActive(project)}>
                             <picture>
                                 {project.data.picture ? (
-                                    <img src={project.data.picture} alt={`${project.data.name} project picture`}/>
+                                    <img src={project.data.picture} alt={`${project.data.name} project picture`} />
                                 ) : (
                                     <h3>NOT FOUND</h3>
                                 )}
@@ -51,7 +54,7 @@ export default function ProjectsGrid(props: Props) {
                                 <h5>{project.data.name}</h5>
                                 <p>{project.data.short_description.substring(0, 75)}...</p>
                                 <ul>
-                                    {project.data.skills.slice(0, 3).map(skill => (
+                                    {project.data.skills.slice(0, 3).map((skill) => (
                                         <li>{skill}</li>
                                     ))}
                                     {project.data.skills.length > 3 && (
@@ -63,13 +66,13 @@ export default function ProjectsGrid(props: Props) {
                         </li>
                     ))}
             </ul>
+
             <Show when={active()} keyed>
-                <div class="modal_overlay" onClick={()=>setActive(null)}>
-                    <div class="modal_content"
-                         onClick={(e)=> e.stopPropagation()}>
+                <div class="modal_overlay" onClick={() => setActive(null)}>
+                    <div class="modal_content" onClick={(e) => e.stopPropagation()}>
                         <picture>
                             {active()!.data.picture ? (
-                                <img src={active()!.data.picture} alt={`${active()!.data.name} project picture`}/>
+                                <img src={active()!.data.picture} alt={`${active()!.data.name} project picture`} />
                             ) : (
                                 <h3>NOT FOUND</h3>
                             )}
@@ -80,29 +83,31 @@ export default function ProjectsGrid(props: Props) {
                             <div class="modal_items">
                                 {active()?.data.position && (
                                     <div>
-                                        <AwardIslandIcon/>
+                                        <AwardIslandIcon />
                                         <p>{active()!.data.position}</p>
                                     </div>
                                 )}
                                 {active()?.data.collaborators && (
                                     <div>
-                                        <GroupIslandIcon/>
+                                        <GroupIslandIcon />
                                         <p>{active()!.data.collaborators}</p>
                                     </div>
                                 )}
                                 <div>
-                                    <CalendarIslandIcon/>
+                                    <CalendarIslandIcon />
                                     <p>{active()!.data.year}</p>
                                 </div>
                             </div>
                             <div class="tech">
                                 <h5>stack</h5>
                                 <ul>
-                                    {active() && active()?.data.skills.map((skill, index) => (
-                                        <li>{skill}</li>
-                                    ))}
+                                    {active() &&
+                                        active()?.data.skills.map((skill) => (
+                                            <li>{skill}</li>
+                                        ))}
                                 </ul>
                             </div>
+
                             <div class="project_md">
                                 {getActiveContent()}
                             </div>
@@ -111,5 +116,5 @@ export default function ProjectsGrid(props: Props) {
                 </div>
             </Show>
         </>
-    )
+    );
 }

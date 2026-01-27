@@ -138,13 +138,13 @@ const services = defineCollection({
 const projectSchema = z.object({
     picture: z.optional(z.string()),
     year: z.string(),
-    type: z.enum(["personal", "enterprise"]),
+    type: z.enum(["personal", "enterprise", "test"]),
     metrics: z.optional(z.string()),
     name: z.string(),
     short_description: z.string(),
     skills: z.array(z.string()),
     position: z.optional(z.string()),
-    collaborators: z.optional(z.string()),
+    collaborators: z.optional(z.array(z.string())),
     repo: z.optional(z.string()),
     live: z.optional(z.string()),
 })
