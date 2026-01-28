@@ -1,15 +1,14 @@
 header.desktop.float{
-  width: 50%;
+  width: 45%;
   padding: 5px 5px 5px 30px;
   top: 10px;
-  left: 25%;
   background: rgb(var(--surface)/0.6);
   border: 1px solid rgb(var(--border));
   border-radius: 35px;
   align-items: center;
   backdrop-filter: blur(5px);
   >img{
-    width: 80px;
+    width: 70px;
   }
   >nav{
     border: none;
@@ -25,7 +24,6 @@ header.desktop{
   margin: 0;
   position: fixed;
   top: 10px;
-  left: 0;
   width: 100%;
   height: 60px;
   padding: 0 80px;
@@ -33,6 +31,7 @@ header.desktop{
   align-items: center;
   z-index: 5;
   grid-template-columns: 1fr 1fr 1fr;
+  transition: width 300ms ease-in-out;
   >img{
     width: 95px;
   }
@@ -97,7 +96,6 @@ header.desktop{
 @media (max-width: 1279px) {
   header.desktop.float{
     width: 62%;
-    left: 19%;
   }
 }
 @media (max-width: 1024px) {
@@ -105,7 +103,6 @@ header.desktop{
     padding: 0 20px;
   }
   header.desktop.float{
-    left: 5%;
     width: 90%;
   }
 }

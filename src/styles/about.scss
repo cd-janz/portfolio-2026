@@ -94,8 +94,9 @@ div.about_container {
     }
     >div.about_links{
       display: flex;
+      padding-top: 10px;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
       >a{
         display: flex;
         align-items: center;

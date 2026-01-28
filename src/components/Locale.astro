@@ -3,9 +3,8 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 import LocaleIcon from "@/assets/icons/system/LocaleIcon.astro";
 const locale = Astro.currentLocale!;
 const ref = Astro.originPathname;
-const path = getRelativeLocaleUrl(locale === "en" ? "es" : "en", ref)
 ---
-<a href={path} target="_self" class="locale">
+<a href={getRelativeLocaleUrl(locale === "en" ? "es" : "en")} target="_self" class="locale">
     <LocaleIcon/>
 </a>
 <style>
